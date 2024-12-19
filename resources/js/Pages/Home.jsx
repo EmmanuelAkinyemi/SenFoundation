@@ -119,7 +119,7 @@ export default function Home({ auth, laravelVersion, phpVersion }) {
                         {/* <!-- End Col --> */}
 
                         <div className="relative ms-4">
-                            <img className="w-full rounded-md" src="https://images.unsplash.com/photo-1665686377065-08ba896d16fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&h=800&q=80" alt="Hero Image" />
+                            <img className="w-full rounded-md" src="https://img.freepik.com/free-photo/front-view-covid19-concept-school_23-2148777459.jpg?t=st=1734567135~exp=1734570735~hmac=b2a4c994c213de4a44a1ad7ad3ac5110d26029a379f0933feee1cca98b98b3e1&w=740" alt="Hero Image" />
                             <div className="absolute inset-0 -z-[1] bg-gradient-to-tr from-gray-200 via-white/0 to-white/0 size-full rounded-md mt-4 -mb-4 me-4 -ms-4 lg:mt-6 lg:-mb-6 lg:me-6 lg:-ms-6 dark:from-neutral-800 dark:via-neutral-900/0 dark:to-neutral-900/0"></div>
 
                             {/* <!-- SVG--> */}
@@ -151,6 +151,113 @@ export default function Home({ auth, laravelVersion, phpVersion }) {
                     {/* <!-- End Grid --> */}
                 </div>
                 {/* <!-- End Hero --> */}
+
+                {/* Sucess Stories card */}
+                <div className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8 lg:py-24 mt-10">
+                    <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20" />
+                    <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
+                    <div className="mx-auto max-w-2xl lg:max-w-4xl">
+                        <img
+                            alt=""
+                            src="https://tailwindui.com/plus/img/logos/workcation-logo-indigo-600.svg"
+                            className="mx-auto h-12"
+                        />
+                        <figure className="mt-10">
+                            <blockquote className="text-center text-xl/8 font-semibold text-gray-900 sm:text-2xl/9">
+                                <p>
+                                    “Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias
+                                    molestiae. Numquam corrupti in laborum sed rerum et corporis.”
+                                </p>
+                            </blockquote>
+                            <figcaption className="mt-10">
+                                <img
+                                    alt=""
+                                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    className="mx-auto size-10 rounded-full"
+                                />
+                                <div className="mt-4 flex items-center justify-center space-x-3 text-base">
+                                    <div className="font-semibold text-gray-900">Judith Black</div>
+                                    <svg width={3} height={3} viewBox="0 0 2 2" aria-hidden="true" className="fill-gray-900">
+                                        <circle r={1} cx={1} cy={1} />
+                                    </svg>
+                                    <div className="text-gray-600">CEO of Workcation</div>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                {/* Sucess Stories card end*/}
+
+                {/* <!-- Card Blog --> */}
+                <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-20 mx-auto">
+                    {/* <!-- Title --> */}
+                    <div className="max-w-2xl mb-10">
+                        <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">Customer stories</h2>
+                        <p className="mt-1 text-gray-600 dark:text-neutral-400">See how game-changing companies are making the most of every engagement with Preline.</p>
+                    </div>
+                    {/* <!-- End Title --> */}
+
+                    {/* <!-- Grid --> */}
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {/* <!-- Card --> */}
+                        <a className="group block rounded-xl focus:outline-none" href="#">
+                            <div className="aspect-w-16 aspect-h-9">
+                                <img className="w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1668869713519-9bcbb0da7171?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Blog Image" />
+                            </div>
+                            <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 group-focus:text-blue-600 dark:text-neutral-300 dark:group-hover:text-white dark:group-focus:text-white">
+                                Unity’s inside sales team drives 80% of its revenue with Preline.
+                            </h3>
+                            <p className="mt-2 text-sm text-gray-600 dark:text-neutral-400">
+                                September 12, 2022
+                            </p>
+                        </a>
+                        {/* <!-- End Card --> */}
+
+                        {/* <!-- Card --> */}
+                        <a className="group block rounded-xl focus:outline-none" href="#">
+                            <div className="aspect-w-16 aspect-h-9">
+                                <img className="w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1668584054035-f5ba7d426401?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Blog Image" />
+                            </div>
+                            <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 group-focus:text-blue-600 dark:text-neutral-300 dark:group-hover:text-white dark:group-focus:text-white">
+                                Living Spaces creates a unified experience across the customer journey.
+                            </h3>
+                            <p className="mt-2 text-sm text-gray-600 dark:text-neutral-400">
+                                September 12, 2022
+                            </p>
+                        </a>
+                        {/* <!-- End Card --> */}
+
+                        {/* <!-- Card --> */}
+                        <a className="group block rounded-xl focus:outline-none" href="#">
+                            <div className="aspect-w-16 aspect-h-9">
+                                <img className="w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1668863699009-1e3b4118675d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Blog Image" />
+                            </div>
+                            <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 group-focus:text-blue-600 dark:text-neutral-300 dark:group-hover:text-white dark:group-focus:text-white">
+                                Atlassian powers sales and support at scale with Preline.
+                            </h3>
+                            <p className="mt-2 text-sm text-gray-600 dark:text-neutral-400">
+                                September 12, 2022
+                            </p>
+                        </a>
+                        {/* <!-- End Card --> */}
+
+                        {/* <!-- Card --> */}
+                        <a className="group block rounded-xl focus:outline-none" href="#">
+                            <div className="aspect-w-16 aspect-h-9">
+                                <img className="w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1668584054131-d5721c515211?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Blog Image" />
+                            </div>
+                            <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 group-focus:text-blue-600 dark:text-neutral-300 dark:group-hover:text-white dark:group-focus:text-white">
+                                Everything you need to know about Preline Pro.
+                            </h3>
+                            <p className="mt-2 text-sm text-gray-600 dark:text-neutral-400">
+                                September 12, 2022
+                            </p>
+                        </a>
+                        {/* <!-- End Card --> */}
+                    </div>
+                    {/* <!-- End Grid --> */}
+                </div>
+                {/* <!-- End Card Blog --> */}
             </main>
             <Footer />
         </>
