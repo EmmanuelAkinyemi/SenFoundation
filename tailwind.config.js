@@ -13,8 +13,22 @@ export default {
 
     theme: {
         extend: {
+            colors: {
+                primary: {
+                    light: '#2563EB', // Light Blue
+                    DEFAULT: '#1E3A8A', // Dark Blue
+                    dark: '#0F172A', // Navy Blue
+                },
+                secondary: {
+                    light: '#34D399', // Light Green
+                    DEFAULT: '#10B981', // Dark Green
+                    accent: '#F59E0B', // Yellow Accent
+                },
+            },
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                heading: ['Poppins', 'sans-serif'], // For headings
+                body: ['Inter', 'sans-serif'], // For body text
             },
         },
     },

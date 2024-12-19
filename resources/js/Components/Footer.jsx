@@ -9,7 +9,9 @@ const Footer = () => {
                     {/* <!-- Grid --> */}
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
                         <div className="col-span-full lg:col-span-1">
-                            <a className="flex-none text-xl font-semibold text-white focus:outline-none focus:opacity-80" href="#" aria-label="Brand">Brand</a>
+                            <a className="flex-none text-xl font-semibold text-white focus:outline-none focus:opacity-80" href="#" aria-label="Brand">
+                            <img src="/assets/img/logo.png" width="80" height="auto" alt="Seniom Foundation" className=''/>
+                            </a>
                         </div>
                         {/* <!-- End Col --> */}
 
@@ -17,27 +19,27 @@ const Footer = () => {
                             <h4 className="font-semibold text-gray-100">Product</h4>
 
                             <div className="mt-3 grid space-y-3">
-                                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200" href="#">Pricing</a></p>
-                                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200" href="#">Changelog</a></p>
-                                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200" href="#">Docs</a></p>
+                                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200" href="#">Privacy Policies</a></p>
+                                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200" href="#">Terms and Conditions</a></p>
+                                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200" href="#">Resources/Downloads</a></p>
                             </div>
                         </div>
                         {/* <!-- End Col --> */}
 
                         <div className="col-span-1">
-                            <h4 className="font-semibold text-gray-100">Company</h4>
+                            <h4 className="font-semibold text-gray-100">Quick Links</h4>
 
                             <div className="mt-3 grid space-y-3">
                                 <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200" href="#">About us</a></p>
+                                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200" href="#">Programs</a></p>
                                 <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200" href="#">Blog</a></p>
-                                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200" href="#">Careers</a> <span className="inline-block ms-1 text-xs bg-blue-700 text-white py-1 px-2 rounded-lg">We're hiring</span></p>
-                                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200" href="#">Customers</a></p>
+                                <p><a className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200" href="#">Contact</a></p>
                             </div>
                         </div>
                         {/* <!-- End Col --> */}
 
                         <div className="col-span-2">
-                            <h4 className="font-semibold text-gray-100">Stay up to date</h4>
+                            <h4 className="font-semibold text-gray-100">Subscribe to our newsletter</h4>
 
                             <form>
                                 <div className="mt-4 flex flex-col items-center gap-2 sm:flex-row sm:gap-3 bg-white rounded-lg p-2 dark:bg-neutral-900">
@@ -50,7 +52,7 @@ const Footer = () => {
                                     </a>
                                 </div>
                                 <p className="mt-3 text-sm text-gray-400">
-                                    New UI kits or big discounts. Never spam.
+                                 Stay ahead with our updates
                                 </p>
                             </form>
                         </div>
@@ -61,7 +63,7 @@ const Footer = () => {
                     <div className="mt-5 sm:mt-12 grid gap-y-2 sm:gap-y-0 sm:flex sm:justify-between sm:items-center">
                         <div className="flex justify-between items-center">
                             <p className="text-sm text-gray-400 dark:text-neutral-400">
-                                © 2024 Preline Labs.
+                                © 2024 Seniom Foundation.
                             </p>
                         </div>
                         {/* <!-- End Col --> */}
