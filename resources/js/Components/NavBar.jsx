@@ -1,65 +1,95 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from '@inertiajs/react';
 
 const NavBar = () => {
-    return (
-        <div>
-            {/* <!-- ========== HEADER ========== --> */}
-            <header className="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full py-7 shadow-sm font-body">
-                <nav className="relative max-w-7xl w-full flex flex-wrap md:grid md:grid-cols-12 basis-full items-center px-4 md:px-6 mx-auto">
-                    <div className="md:col-span-3">
-                        {/* <!-- Logo --> */}
-                        <a className="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-none focus:opacity-80" href="/" aria-label="Seniom Foundation">
-                        <img src="/assets/img/logo.png" width="65" height="auto" alt="Seniom Foundation" className=''/>
+  const [isScrolled, setIsScrolled] = useState(false);
 
-                        </a>
-                        {/* <!-- End Logo --> */}
-                    </div>
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-                    {/* <!-- Button Group --> */}
-                    <div className="flex items-center gap-x-1 md:gap-x-2 ms-auto py-1 md:ps-6 md:order-3 md:col-span-3">
-                        <button type="button" className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-xl bg-white border border-gray-200 text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none ">
-                        Volunteer
-                            
-                        </button>
-                        <button type="button" className="py-2 px-3 inline-flex items-center gap-x-2 text-sm rounded-xl border border-transparent bg-primary-light text-white hover:bg-primary focus:outline-none focus:bg-primary transition disabled:opacity-50 disabled:pointer-events-none font-semibold">
-                            Donate
-                        </button>
+  return (
+    <header
+      className={`sticky top-0 inset-x-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white/80 shadow-lg backdrop-blur-md' : 'bg-white/50 backdrop-blur'
+      }`}
+    >
+      <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 md:py-4">
+        {/* Logo */}
+        <Link
+          href="/"
+          className="text-xl font-bold text-gray-800 hover:opacity-80 transition"
+          aria-label="Brand Logo"
+        >
+          <img src="/assets/img/logo.png" width="80" height="auto" alt="Seniom Foundation" className=''/>
+        </Link>
 
-                        <div className="md:hidden">
-                            <button type="button" className="hs-collapse-toggle size-[38px] flex justify-center items-center text-sm font-semibold rounded-xl border border-gray-200 text-black hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none " id="hs-navbar-hcail-collapse" aria-expanded="false" aria-controls="hs-navbar-hcail" aria-label="Toggle navigation" data-hs-collapse="#hs-navbar-hcail">
-                                <svg className="hs-collapse-open:hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6" /><line x1="3" x2="21" y1="12" y2="12" /><line x1="3" x2="21" y1="18" y2="18" /></svg>
-                                <svg className="hs-collapse-open:block hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
-                            </button>
-                        </div>
-                    </div>
-                    {/* <!-- End Button Group --> */}
+        {/* Mobile Collapse Button */}
+        <button
+          type="button"
+          className="md:hidden flex items-center justify-center w-10 h-10 rounded-full border border-gray-300 bg-white/90 hover:bg-gray-100 text-gray-800"
+          data-hs-collapse="#navbar-menu"
+          aria-controls="navbar-menu"
+          aria-expanded="false"
+        >
+          <svg
+            className="w-5 h-5"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
 
-                    {/* <!-- Collapse --> */}
-                    <div id="hs-navbar-hcail" className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block md:w-auto md:basis-auto md:order-2 md:col-span-6" aria-labelledby="hs-navbar-hcail-collapse">
-                        <div className="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:justify-center md:items-center md:gap-y-0 md:gap-x-7 md:mt-0">
-                            <div>
-                                <a className="relative inline-block text-black focus:outline-none before:absolute before:bottom-0.5 before:start-0 before:-z-[1] before:w-full before:h-1 before:bg-primary-light " href="#" aria-current="page">Home</a>
-                            </div>
-                            <div>
-                                <a className="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600" href="#">About Us</a>
-                            </div>
-                            <div>
-                                <a className="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600" href="#">Initiatives</a>
-                            </div>
-                            <div>
-                                <a className="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600" href="#">Blog</a>
-                            </div>
-                            <div>
-                                <a className="inline-block text-black hover:text-gray-600 focus:outline-none focus:text-gray-600" href="#">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                    {/* <!-- End Collapse --> */}
-                </nav>
-            </header>
-            {/* <!-- ========== END HEADER ========== --> */}
+        {/* Navigation Links */}
+        <div
+          id="navbar-menu"
+          className="hidden md:flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6"
+        >
+          <Link
+            href="/"
+            className="text-sm font-medium text-gray-800 hover:text-red-600 transition"
+          >
+            Home
+          </Link>
+          <Link
+            href="/account"
+            className="text-sm font-medium text-gray-800 hover:text-red-600 transition"
+          >
+            About
+          </Link>
+          <Link
+            href="/work"
+            className="text-sm font-medium text-gray-800 hover:text-red-600 transition"
+          >
+            Initiatives
+          </Link>
+          <Link
+            href="/blog"
+            className="text-sm font-medium text-gray-800 hover:text-red-600 transition"
+          >
+            Blog
+          </Link>
+
+          
         </div>
-    );
-}
+
+        {/* Login Button */}
+        <Link
+          href="/login"
+          className="hidden md:block text-sm font-medium bg-primary-light hover:bg-primary shadow-sm rounded-lg border-2 py-2 px-4 text-white hover:text-slate-100 transition duration-500"
+        >
+          Donate
+        </Link>
+      </nav>
+    </header>
+  );
+};
 
 export default NavBar;

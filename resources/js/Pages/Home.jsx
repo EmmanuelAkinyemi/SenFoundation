@@ -1,8 +1,51 @@
 import { Head, Link } from '@inertiajs/react';
 import NavBar from '@/Components/NavBar';
 import Footer from '@/Components/Footer';
+import { ChevronDownIcon } from '@heroicons/react/16/solid'
+import { Field, Label, Switch } from '@headlessui/react'
+const posts = [
+    {
+        id: 1,
+        title: 'Boost your conversion rate',
+        href: '#',
+        description:
+            'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+        date: 'Mar 16, 2020',
+        datetime: '2020-03-16',
+        category: { title: 'Marketing', href: '#' },
+        author: {
+            name: 'Michael Foster',
+            role: 'Co-Founder / CTO',
+            href: '#',
+            imageUrl:
+                'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        },
+
+    },
+    {
+        id: 2,
+        title: 'Boost your conversion rate',
+        href: '#',
+        description:
+            'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+        date: 'Mar 16, 2020',
+        datetime: '2020-03-16',
+        category: { title: 'Marketing', href: '#' },
+        author: {
+            name: 'Michael Foster',
+            role: 'Co-Founder / CTO',
+            href: '#',
+            imageUrl:
+                'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        },
+
+    },
+    // More posts...
+]
 
 export default function Home({ auth, laravelVersion, phpVersion }) {
+
+    const [agreed, setAgreed] = useState(false)
     const handleImageError = () => {
         document
             .getElementById('screenshot-container')
@@ -24,7 +67,7 @@ export default function Home({ auth, laravelVersion, phpVersion }) {
                     {/* <!-- Grid --> */}
                     <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
                         <div>
-                            <h1 className="font-heading block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight">Education for All,  <span className="text-secondary-accent">Hope for Many
+                            <h1 className="font-heading block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight">Education for All,  <span className="text-primary">Hope for Many
                             </span></h1>
                             <p className="font-body mt-3 text-lg text-gray-800">Together, we can break barriers and create a world where learning knows no bounds.</p>
 
@@ -74,7 +117,50 @@ export default function Home({ auth, laravelVersion, phpVersion }) {
                     {/* <!-- End Grid --> */}
                 </div>
                 {/* <!-- End Hero --> */}
-
+                <div className="bg-white py-24 sm:py-32">
+                    <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                        <h2 className="text-center text-lg/8 font-semibold font-heading text-gray-900">
+                            Our partners and sponsors
+                        </h2>
+                        <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+                            <img
+                                alt="Transistor"
+                                src="https://tailwindui.com/plus/img/logos/158x48/transistor-logo-gray-900.svg"
+                                width={158}
+                                height={48}
+                                className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+                            />
+                            <img
+                                alt="Reform"
+                                src="https://tailwindui.com/plus/img/logos/158x48/reform-logo-gray-900.svg"
+                                width={158}
+                                height={48}
+                                className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+                            />
+                            <img
+                                alt="Tuple"
+                                src="https://tailwindui.com/plus/img/logos/158x48/tuple-logo-gray-900.svg"
+                                width={158}
+                                height={48}
+                                className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+                            />
+                            <img
+                                alt="SavvyCal"
+                                src="https://tailwindui.com/plus/img/logos/158x48/savvycal-logo-gray-900.svg"
+                                width={158}
+                                height={48}
+                                className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
+                            />
+                            <img
+                                alt="Statamic"
+                                src="https://tailwindui.com/plus/img/logos/158x48/statamic-logo-gray-900.svg"
+                                width={158}
+                                height={48}
+                                className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
+                            />
+                        </div>
+                    </div>
+                </div>
                 {/* About Section */}
                 <div className="py-24 relative xl:mr-0 lg:mr-5 mr-0">
                     <div className="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
@@ -85,8 +171,8 @@ export default function Home({ auth, laravelVersion, phpVersion }) {
                                         <h6 className="text-gray-400 text-base font-normal leading-relaxed font-body">About Us</h6>
                                         <div className="w-full flex-col justify-start lg:items-start items-center gap-3 flex">
                                             <h2
-                                                className="text-primary-light text-4xl font-bold font-manrope leading-normal lg:text-start text-center font-heading">
-                                                The Tale of Our Achievement <span className='text-secondary-accent'>Story</span></h2>
+                                                className="text-primary text-4xl font-bold font-manrope leading-normal lg:text-start text-center font-heading">
+                                                The Tale of Our Achievement <span className='text-black'>Story</span></h2>
                                             <p
                                                 className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center font-body">
                                                 Our achievement story is a testament to teamwork and perseverance. Together, we've
@@ -128,7 +214,7 @@ export default function Home({ auth, laravelVersion, phpVersion }) {
                                     </div>
                                 </div>
                                 <button
-                                    className="sm:w-fit w-full group px-3.5 py-2 bg-primary-light hover:bg-indigo-100 rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] transition-all duration-700 ease-in-out justify-center items-center flex">
+                                    className="sm:w-fit w-full group px-3.5 py-2 bg-primary hover:bg-primary-light rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] transition-all duration-700 ease-in-out justify-center items-center flex">
                                     <span
                                         className="px-1.5 text-white text-sm leading-6 group-hover:-translate-x-0.5 transition-all duration-700 ease-in-out capitalize font-medium font-body">Keep in touch</span>
                                     <svg className="group-hover:translate-x-0.5 transition-all duration-700 ease-in-out"
@@ -265,75 +351,392 @@ export default function Home({ auth, laravelVersion, phpVersion }) {
                 {/* Sucess Stories card end*/}
 
                 {/* <!-- Card Blog --> */}
-                <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-20 mx-auto">
+                <div className="bg-white py-24 sm:py-32">
+                    <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                        <div className="mx-auto max-w-2xl lg:mx-0">
+                            <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">From the blog</h2>
+                            <p className="mt-2 text-lg/8 text-gray-600">Learn how to grow your business with our expert advice.</p>
+                        </div>
+                        <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                            {posts.map((post) => (
+                                <article key={post.id} className="flex max-w-xl flex-col items-start justify-between">
+                                    <div className="flex items-center gap-x-4 text-xs">
+                                        <time dateTime={post.datetime} className="text-gray-500">
+                                            {post.date}
+                                        </time>
+                                        <a
+                                            href={post.category.href}
+                                            className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+                                        >
+                                            {post.category.title}
+                                        </a>
+                                    </div>
+                                    <div className="group relative">
+                                        <h3 className="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
+                                            <a href={post.href}>
+                                                <span className="absolute inset-0" />
+                                                {post.title}
+                                            </a>
+                                        </h3>
+                                        <p className="mt-5 line-clamp-3 text-sm/6 text-gray-600">{post.description}</p>
+                                    </div>
+                                    <div className="relative mt-8 flex items-center gap-x-4">
+                                        <img alt="" src={post.author.imageUrl} className="size-10 rounded-full bg-gray-50" />
+                                        <div className="text-sm/6">
+                                            <p className="font-semibold text-gray-900">
+                                                <a href={post.author.href}>
+                                                    <span className="absolute inset-0" />
+                                                    {post.author.name}
+                                                </a>
+                                            </p>
+                                            <p className="text-gray-600">{post.author.role}</p>
+                                        </div>
+                                    </div>
+                                </article>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+                {/* <!-- End Card Blog --> */}
+
+                {/* CTA SECTION */}
+                <div className="bg-white">
+                    <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
+                        <div className="relative isolate overflow-hidden bg-secondary-light px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+                            <svg
+                                viewBox="0 0 1024 1024"
+                                aria-hidden="true"
+                                className="absolute left-1/2 top-1/2 -z-10 size-[64rem] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0"
+                            >
+                                <circle r={512} cx={512} cy={512} fill="url(#759c1415-0410-454c-8f7c-9a820de03641)" fillOpacity="0.7" />
+                                <defs>
+                                    <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
+                                        <stop stopColor="#7775D6" />
+                                        <stop offset={1} stopColor="#E935C1" />
+                                    </radialGradient>
+                                </defs>
+                            </svg>
+                            <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
+                                <h2 className="text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl font-heading">
+                                    Boost your productivity. Start using our app today.
+                                </h2>
+                                <p className="mt-6 text-pretty text-lg/8 text-gray-600 font-body">
+                                    Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla.
+                                </p>
+                                <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
+                                    <a
+                                        href="#"
+                                        className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                                    >
+                                        Get started
+                                    </a>
+                                    <a href="#" className="text-sm/6 font-semibold text-white">
+                                        Learn more <span aria-hidden="true">→</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="relative mt-16 h-80 lg:mt-8">
+                                <img
+                                    alt="App screenshot"
+                                    src="https://img.freepik.com/free-photo/african-children-ai-generated-image_268835-6627.jpg?t=st=1734913995~exp=1734917595~hmac=04e1e960d98ff5067714d8f6a76ad531044bb99f44c35af132d0f68f1145ea25&w=740"
+                                    width={1824}
+                                    height={1080}
+                                    className="absolute left-0 top-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* CTA SECTION ENDS */}
+
+                {/* <!-- Team --> */}
+                <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto bg-white">
                     {/* <!-- Title --> */}
-                    <div className="max-w-2xl mb-10">
-                        <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">Customer stories</h2>
-                        <p className="mt-1 text-gray-600 dark:text-neutral-400">See how game-changing companies are making the most of every engagement with Preline.</p>
+                    <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+                        <h2 className="text-2xl font-bold md:text-4xl md:leading-tight">Our leadership</h2>
                     </div>
                     {/* <!-- End Title --> */}
 
                     {/* <!-- Grid --> */}
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {/* <!-- Card --> */}
-                        <a className="group block rounded-xl focus:outline-none" href="#">
-                            <div className="aspect-w-16 aspect-h-9">
-                                <img className="w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1668869713519-9bcbb0da7171?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Blog Image" />
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+                        <div className="text-center">
+                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+                            <div className="mt-2 sm:mt-4">
+                                <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg">
+                                    David Forren
+                                </h3>
+                                <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
+                                    Founder / CEO
+                                </p>
                             </div>
-                            <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 group-focus:text-blue-600 ">
-                                Unity’s inside sales team drives 80% of its revenue with Preline.
-                            </h3>
-                            <p className="mt-2 text-sm text-gray-600">
-                                September 12, 2022
-                            </p>
-                        </a>
-                        {/* <!-- End Card --> */}
+                        </div>
+                        {/* <!-- End Col --> */}
 
-                        {/* <!-- Card --> */}
-                        <a className="group block rounded-xl focus:outline-none" href="#">
-                            <div className="aspect-w-16 aspect-h-9">
-                                <img className="w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1668584054035-f5ba7d426401?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Blog Image" />
+                        <div className="text-center">
+                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+                            <div className="mt-2 sm:mt-4">
+                                <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg">
+                                    Amil Evara
+                                </h3>
+                                <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
+                                    UI/UX Designer
+                                </p>
                             </div>
-                            <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 group-focus:text-blue-600 ">
-                                Living Spaces creates a unified experience across the customer journey.
-                            </h3>
-                            <p className="mt-2 text-sm text-gray-600 ">
-                                September 12, 2022
-                            </p>
-                        </a>
-                        {/* <!-- End Card --> */}
+                        </div>
+                        {/* <!-- End Col --> */}
 
-                        {/* <!-- Card --> */}
-                        <a className="group block rounded-xl focus:outline-none" href="#">
-                            <div className="aspect-w-16 aspect-h-9">
-                                <img className="w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1668863699009-1e3b4118675d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Blog Image" />
+                        <div className="text-center">
+                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+                            <div className="mt-2 sm:mt-4">
+                                <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg">
+                                    Ebele Egbuna
+                                </h3>
+                                <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
+                                    Support Consultant
+                                </p>
                             </div>
-                            <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 group-focus:text-blue-600 ">
-                                Atlassian powers sales and support at scale with Preline.
-                            </h3>
-                            <p className="mt-2 text-sm text-gray-600 ">
-                                September 12, 2022
-                            </p>
-                        </a>
-                        {/* <!-- End Card --> */}
+                        </div>
+                        {/* <!-- End Col --> */}
 
-                        {/* <!-- Card --> */}
-                        <a className="group block rounded-xl focus:outline-none" href="#">
-                            <div className="aspect-w-16 aspect-h-9">
-                                <img className="w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1668584054131-d5721c515211?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Blog Image" />
+                        <div className="text-center">
+                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+                            <div className="mt-2 sm:mt-4">
+                                <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg">
+                                    Maria Powers
+                                </h3>
+                                <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
+                                    Director of sales
+                                </p>
                             </div>
-                            <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 group-focus:text-blue-600 ">
-                                Everything you need to know about Preline Pro.
-                            </h3>
-                            <p className="mt-2 text-sm text-gray-600 ">
-                                September 12, 2022
-                            </p>
-                        </a>
-                        {/* <!-- End Card --> */}
+                        </div>
+                        {/* <!-- End Col --> */}
+
+                        <div className="text-center">
+                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+                            <div className="mt-2 sm:mt-4">
+                                <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg">
+                                    Delia Pawelke
+                                </h3>
+                                <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
+                                    Front-end Developer
+                                </p>
+                            </div>
+                        </div>
+                        {/* <!-- End Col --> */}
+
+                        <div className="text-center">
+                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://images.unsplash.com/photo-1624224971170-2f84fed5eb5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+                            <div className="mt-2 sm:mt-4">
+                                <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg">
+                                    Tom Lowry
+                                </h3>
+                                <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
+                                    UI/UX Designer
+                                </p>
+                            </div>
+                        </div>
+                        {/* <!-- End Col --> */}
+
+                        <div className="text-center">
+                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://images.unsplash.com/photo-1579017331263-ef82f0bbc748?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+                            <div className="mt-2 sm:mt-4">
+                                <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg">
+                                    Louise Donadieu
+                                </h3>
+                                <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
+                                    Support Consultant
+                                </p>
+                            </div>
+                        </div>
+                        {/* <!-- End Col --> */}
+
+                        <div className="text-center">
+                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://images.unsplash.com/photo-1514222709107-a180c68d72b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+                            <div className="mt-2 sm:mt-4">
+                                <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg">
+                                    Jeff Fisher
+                                </h3>
+                                <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
+                                    Project Manager
+                                </p>
+                            </div>
+                        </div>
+                        {/* <!-- End Col --> */}
+
+                        <div className="text-center">
+                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://images.unsplash.com/photo-1602452920335-6a132309c7c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+                            <div className="mt-2 sm:mt-4">
+                                <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg">
+                                    Sophia Harrington
+                                </h3>
+                                <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
+                                    Project Manager
+                                </p>
+                            </div>
+                        </div>
+                        {/* <!-- End Col --> */}
                     </div>
                     {/* <!-- End Grid --> */}
                 </div>
-                {/* <!-- End Card Blog --> */}
+                {/* <!-- End Team --> */}
+
+                {/* contact us */}
+                <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
+                    <div
+                        aria-hidden="true"
+                        className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
+                    >
+                        <div
+                            style={{
+                                clipPath:
+                                    'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+                            }}
+                            className="relative left-1/2 -z-10 aspect-1155/678 w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]"
+                        />
+                    </div>
+                    <div className="mx-auto max-w-2xl text-center">
+                        <h2 className="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">Contact sales</h2>
+                        <p className="mt-2 text-lg/8 text-gray-600">Aute magna irure deserunt veniam aliqua magna enim voluptate.</p>
+                    </div>
+                    <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
+                        <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                            <div>
+                                <label htmlFor="first-name" className="block text-sm/6 font-semibold text-gray-900">
+                                    First name
+                                </label>
+                                <div className="mt-2.5">
+                                    <input
+                                        id="first-name"
+                                        name="first-name"
+                                        type="text"
+                                        autoComplete="given-name"
+                                        className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                                    />
+                                </div>
+                            </div>
+                            <div>
+                                <label htmlFor="last-name" className="block text-sm/6 font-semibold text-gray-900">
+                                    Last name
+                                </label>
+                                <div className="mt-2.5">
+                                    <input
+                                        id="last-name"
+                                        name="last-name"
+                                        type="text"
+                                        autoComplete="family-name"
+                                        className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                                    />
+                                </div>
+                            </div>
+                            <div className="sm:col-span-2">
+                                <label htmlFor="company" className="block text-sm/6 font-semibold text-gray-900">
+                                    Company
+                                </label>
+                                <div className="mt-2.5">
+                                    <input
+                                        id="company"
+                                        name="company"
+                                        type="text"
+                                        autoComplete="organization"
+                                        className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                                    />
+                                </div>
+                            </div>
+                            <div className="sm:col-span-2">
+                                <label htmlFor="email" className="block text-sm/6 font-semibold text-gray-900">
+                                    Email
+                                </label>
+                                <div className="mt-2.5">
+                                    <input
+                                        id="email"
+                                        name="email"
+                                        type="email"
+                                        autoComplete="email"
+                                        className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                                    />
+                                </div>
+                            </div>
+                            <div className="sm:col-span-2">
+                                <label htmlFor="phone-number" className="block text-sm/6 font-semibold text-gray-900">
+                                    Phone number
+                                </label>
+                                <div className="mt-2.5">
+                                    <div className="flex rounded-md bg-white outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600">
+                                        <div className="grid shrink-0 grid-cols-1 focus-within:relative">
+                                            <select
+                                                id="country"
+                                                name="country"
+                                                autoComplete="country"
+                                                aria-label="Country"
+                                                className="col-start-1 row-start-1 w-full appearance-none rounded-md py-2 pr-7 pl-3.5 text-base text-gray-500 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                                            >
+                                                <option>US</option>
+                                                <option>CA</option>
+                                                <option>EU</option>
+                                            </select>
+                                            <ChevronDownIcon
+                                                aria-hidden="true"
+                                                className="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4"
+                                            />
+                                        </div>
+                                        <input
+                                            id="phone-number"
+                                            name="phone-number"
+                                            type="text"
+                                            placeholder="123-456-7890"
+                                            className="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="sm:col-span-2">
+                                <label htmlFor="message" className="block text-sm/6 font-semibold text-gray-900">
+                                    Message
+                                </label>
+                                <div className="mt-2.5">
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        rows={4}
+                                        className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                                        defaultValue={''}
+                                    />
+                                </div>
+                            </div>
+                            <Field className="flex gap-x-4 sm:col-span-2">
+                                <div className="flex h-6 items-center">
+                                    <Switch
+                                        checked={agreed}
+                                        onChange={setAgreed}
+                                        className="group flex w-8 flex-none cursor-pointer rounded-full bg-gray-200 p-px ring-1 ring-gray-900/5 transition-colors duration-200 ease-in-out ring-inset focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 data-checked:bg-indigo-600"
+                                    >
+                                        <span className="sr-only">Agree to policies</span>
+                                        <span
+                                            aria-hidden="true"
+                                            className="size-4 transform rounded-full bg-white ring-1 shadow-xs ring-gray-900/5 transition duration-200 ease-in-out group-data-checked:translate-x-3.5"
+                                        />
+                                    </Switch>
+                                </div>
+                                <Label className="text-sm/6 text-gray-600">
+                                    By selecting this, you agree to our{' '}
+                                    <a href="#" className="font-semibold text-indigo-600">
+                                        privacy&nbsp;policy
+                                    </a>
+                                    .
+                                </Label>
+                            </Field>
+                        </div>
+                        <div className="mt-10">
+                            <button
+                                type="submit"
+                                className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                            >
+                                Let's talk
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                {/* contact us end */}
             </main>
             <Footer />
         </>

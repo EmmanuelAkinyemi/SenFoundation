@@ -15,14 +15,14 @@ export default {
         extend: {
             colors: {
                 primary: {
-                    light: '#2563EB', // Light Blue
-                    DEFAULT: '#1E3A8A', // Dark Blue
-                    dark: '#0F172A', // Navy Blue
+                    light: '#F87171', // Light Red
+                    DEFAULT: '#DC2626', // Dark Red
+                    dark: '#991B1B', // Deep Red
                 },
                 secondary: {
-                    light: '#34D399', // Light Green
+                    light: '#6EE7B7', // Light Green
                     DEFAULT: '#10B981', // Dark Green
-                    accent: '#F59E0B', // Yellow Accent
+                    accent: '#FBBF24', // Yellow Accent
                 },
             },
             fontFamily: {
