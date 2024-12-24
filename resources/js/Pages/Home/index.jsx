@@ -42,7 +42,7 @@ const posts = [
     // More posts...
 ]
 
-export default function Home({ auth, laravelVersion, phpVersion }) {
+export default function Index({ auth, laravelVersion, phpVersion }) {
     const handleImageError = () => {
         document
             .getElementById('screenshot-container')
