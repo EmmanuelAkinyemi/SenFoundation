@@ -27,7 +27,7 @@ Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 // });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    return Inertia::render('Dashboard/index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

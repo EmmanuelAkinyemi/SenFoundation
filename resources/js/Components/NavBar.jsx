@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from '@inertiajs/react';
+import { Link, usePage } from '@inertiajs/react';
 
 const NavBar = () => {
+    const { url } = usePage();
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
@@ -53,32 +54,32 @@ const NavBar = () => {
                 >
                     <Link
                         href="/"
-                        className="text-sm font-medium text-gray-800 hover:text-red-600 transition"
+                        className={`text-sm font-medium text-gray-800 ${url === '/' ? 'text-primary' : 'hover:text-red-600 transition'}`}
                     >
                         Home
                     </Link>
                     <Link
                         href={route('about')}
-                        className="text-sm font-medium text-gray-800 hover:text-red-600 transition"
+                        className={`text-sm font-medium text-gray-800 ${url === '/about' ? 'text-primary' : 'hover:text-red-600 transition'}`}
                     >
                         About
                     </Link>
                     <Link
                         href={route('services')}
-                        className="text-sm font-medium text-gray-800 hover:text-red-600 transition"
+                        className={`text-sm font-medium text-gray-800 ${url === '/services' ? 'text-primary' : 'hover:text-red-600 transition'}`}
                     >
                         Services
                     </Link>
                     <Link
                         href={route('blog')}
-                        className="text-sm font-medium text-gray-800 hover:text-red-600 transition"
+                        className={`text-sm font-medium text-gray-800 ${url === '/blog' ? 'text-primary' : 'hover:text-red-600 transition'}`}
                     >
                         Blog
                     </Link>
 
                     <Link
                         href={route('contact')}
-                        className="text-sm font-medium text-gray-800 hover:text-red-600 transition"
+                        className={`text-sm font-medium text-gray-800 ${url === '/contact' ? 'text-primary' : 'hover:text-red-600 transition'}`}
                     >
                         Contact Us
                     </Link>
