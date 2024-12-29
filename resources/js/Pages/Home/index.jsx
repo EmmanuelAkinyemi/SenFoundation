@@ -64,9 +64,9 @@ export default function Index({ auth, laravelVersion, phpVersion }) {
                     {/* <!-- Grid --> */}
                     <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
                         <div>
-                            <h1 className="font-heading block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight">Education for All,  <span className="text-primary">Hope for Many
+                            <h1 className="font-heading block text-4xl font-bold text-gray-800 sm:text-4xl lg:text-5xl lg:leading-tight">Empowering Minds,  <span className="text-primary">Transforming Futures
                             </span></h1>
-                            <p className="font-body mt-3 text-lg text-gray-800">Together, we can break barriers and create a world where learning knows no bounds.</p>
+                            <p className="font-body mt-3 text-lg text-gray-800">Join us in creating opportunities through education, innovation, and community development. Together, we can make a difference.</p>
 
                             {/* <!-- Buttons --> */}
                             <div className="mt-7 grid gap-3 w-full sm:inline-flex">
@@ -165,52 +165,46 @@ export default function Index({ auth, laravelVersion, phpVersion }) {
                             <div className="w-full flex-col justify-center lg:items-start items-center gap-10 inline-flex">
                                 <div className="w-full flex-col justify-center items-start gap-8 flex">
                                     <div className="flex-col justify-start lg:items-start items-center gap-4 flex">
-                                        <h6 className="text-gray-400 text-base font-normal leading-relaxed font-body">About Us</h6>
+                                        <h6 className="text-gray-400 text-base font-normal leading-relaxed font-body">Who We Are</h6>
                                         <div className="w-full flex-col justify-start lg:items-start items-center gap-3 flex">
                                             <h2
                                                 className="text-primary text-4xl font-bold font-manrope leading-normal lg:text-start text-center font-heading">
-                                                The Tale of Our Achievement <span className='text-black'>Story</span></h2>
+                                                Empowering Lives Through <span className='text-black'>Education and Innovation.</span></h2>
                                             <p
                                                 className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center font-body">
-                                                Our achievement story is a testament to teamwork and perseverance. Together, we've
-                                                overcome challenges, celebrated victories, and created a narrative of progress and
-                                                success.</p>
+                                                At Seniom Foundation, we believe that education is the cornerstone of progress. Our mission is to bridge the gap in access to quality learning opportunities for underserved communities, empowering individuals to unlock their full potential.
+                                            </p>
+                                            <p
+                                                className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center font-body">
+                                                Through innovative programs, scholarships, and mentorship, we strive to create a future where every child, regardless of background, has the tools to succeed. Whether it's providing educational resources, supporting technological advancements, or fostering leadership skills, Seniom Foundation is dedicated to making a lasting impact.
+                                            </p>
                                         </div>
                                     </div>
                                     <div className="w-full flex-col justify-center items-start gap-6 flex">
                                         <div className="w-full justify-start items-center gap-8 grid md:grid-cols-2 grid-cols-1">
                                             <div
                                                 className="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
-                                                <h4 className="text-gray-900 text-2xl font-bold font-manrope leading-9 font-heading">33+ Years</h4>
-                                                <p className="text-gray-500 text-base font-normal leading-relaxed font-body">Influencing Digital
-                                                    Landscapes Together</p>
+                                                <h4 className="text-gray-900 text-2xl font-bold font-manrope leading-9 font-heading">Global Reach</h4>
+                                                <p className="text-gray-500 text-base font-normal leading-relaxed font-body">Serving communities locally and internationally.</p>
                                             </div>
                                             <div
                                                 className="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
-                                                <h4 className="text-gray-900 text-2xl font-bold font-manrope leading-9 font-heading">125+ Projects
+                                                <h4 className="text-gray-900 text-2xl font-bold font-manrope leading-9 font-heading">Education Programs
                                                 </h4>
-                                                <p className="text-gray-500 text-base font-normal leading-relaxed font-body">Excellence Achieved
-                                                    Through Success</p>
+                                                <p className="text-gray-500 text-base font-normal leading-relaxed font-body">Tailored to meet the diverse needs of learners.</p>
                                             </div>
                                         </div>
                                         <div className="w-full h-full justify-start items-center gap-8 grid md:grid-cols-2 grid-cols-1">
                                             <div
                                                 className="w-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
-                                                <h4 className="text-gray-900 text-2xl font-bold font-manrope leading-9 font-heading">26+ Awards</h4>
-                                                <p className="text-gray-500 text-base font-normal leading-relaxed font-body">Our Dedication to
-                                                    Innovation Wins Understanding</p>
+                                                <h4 className="text-gray-900 text-2xl font-bold font-manrope leading-9 font-heading"> Partnerships</h4>
+                                                <p className="text-gray-500 text-base font-normal leading-relaxed font-body">Collaborating with schools, organizations, and volunteers.</p>
                                             </div>
-                                            <div
-                                                className="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
-                                                <h4 className="text-gray-900 text-2xl font-bold font-manrope leading-9 font-heading">99% Happy
-                                                    Clients</h4>
-                                                <p className="text-gray-500 text-base font-normal leading-relaxed font-body">Mirrors our Focus on
-                                                    Client Satisfaction.</p>
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
-                                <button
+                                <a href='/services'
                                     className="sm:w-fit w-full group px-3.5 py-2 bg-primary hover:bg-primary-light rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] transition-all duration-700 ease-in-out justify-center items-center flex">
                                     <span
                                         className="px-1.5 text-white text-sm leading-6 group-hover:-translate-x-0.5 transition-all duration-700 ease-in-out capitalize font-medium font-body">Keep in touch</span>
@@ -219,13 +213,13 @@ export default function Index({ auth, laravelVersion, phpVersion }) {
                                         <path d="M6.75265 4.49658L11.2528 8.99677L6.75 13.4996" stroke="#FFFFFF" stroke-width="1.6"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                </button>
+                                </a>
                             </div>
                             <div className="w-full lg:justify-start justify-center items-start flex">
                                 <div
                                     className="sm:w-[564px] w-full sm:h-[646px] h-full sm:bg-gray-100 rounded-3xl sm:border border-gray-200 relative">
                                     <img className="sm:mt-5 sm:ml-5 w-full h-full rounded-3xl object-cover"
-                                        src="https://pagedone.io/asset/uploads/1717742431.png" alt="about Us image" />
+                                        src="https://img.freepik.com/free-photo/woman-teaching-kids-class_23-2148892552.jpg?t=st=1735212498~exp=1735216098~hmac=4ec479229d0b25ce52d3318146badcaad5665d8a2e0fe1777f70f0f776d7781e&w=740" alt="about Us image" />
                                 </div>
                             </div>
                         </div>
@@ -239,14 +233,14 @@ export default function Index({ auth, laravelVersion, phpVersion }) {
                     <div className="grid md:grid-cols-2 gap-12">
                         <div className="lg:w-3/4">
                             <h2 className="font-heading text-3xl text-gray-800 font-bold lg:text-4xl">
-                                Collaborative tools to design better user experience
+                                Our Programs & Initiatives
                             </h2>
                             <p className="mt-3 font-body text-gray-800">
-                                We help businesses bring ideas to life in the digital world, by designing and implementing the technology tools that they need to win.
+                                Driving Change Through Education, Innovation, and Community Empowerment.
                             </p>
                             <p className="mt-5">
-                                <a className="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium" href="#">
-                                    Contact sales to learn more
+                                <a className="inline-flex items-center gap-x-1 text-sm text-primary  decoration-2 transition hover:underline  focus:outline-none focus:underline font-medium" href="#">
+                                    Learn More
                                     <svg className="shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
                                 </a>
                             </p>
@@ -261,11 +255,11 @@ export default function Index({ auth, laravelVersion, phpVersion }) {
                                     <svg className="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></svg>
                                 </span>
                                 <div className="grow">
-                                    <h3 className="text-base sm:text-lg font-semibold text-gray-800">
-                                        Industry-leading documentation
+                                    <h3 className="text-base sm:text-lg font-semibold font-heading text-gray-800">
+                                    Scholarships for Success
                                     </h3>
                                     <p className="mt-1 text-gray-600">
-                                        Our documentation and extensive Client libraries contain everything a business needs to build a custom integration in a fraction of the time.
+                                    We provide financial aid and educational resources to underprivileged students, ensuring they have the tools to achieve their academic dreams.
                                     </p>
                                 </div>
                             </div>
@@ -279,10 +273,10 @@ export default function Index({ auth, laravelVersion, phpVersion }) {
                                 </span>
                                 <div className="grow">
                                     <h3 className="text-base sm:text-lg font-semibold text-gray-800">
-                                        Developer community support
+                                    Tech-Driven Learning
                                     </h3>
                                     <p className="mt-1 text-gray-600">
-                                        We actively contribute to open-source projects—giving back to the community through development, patches, and sponsorships.
+                                    Empowering students and educators with access to digital tools, e-learning platforms, and workshops designed to foster 21st-century skills.
                                     </p>
                                 </div>
                             </div>
@@ -296,10 +290,10 @@ export default function Index({ auth, laravelVersion, phpVersion }) {
                                 </span>
                                 <div className="grow">
                                     <h3 className="text-base sm:text-lg font-semibold text-gray-800">
-                                        Simple and affordable
+                                    Community Leadership Initiative
                                     </h3>
                                     <p className="mt-1 text-gray-600">
-                                        From boarding passes to movie tickets, there's pretty much nothing you can't store with Preline.
+                                    Developing young leaders through mentorship programs and community projects that inspire social responsibility and innovation.
                                     </p>
                                 </div>
                             </div>
@@ -311,88 +305,94 @@ export default function Index({ auth, laravelVersion, phpVersion }) {
                 </div>
                 {/* <!-- End Icon Blocks --> */}
 
-                {/* Sucess Stories card */}
-                <div className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8 lg:py-24">
-                    <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20" />
-                    <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
-                    <div className="mx-auto max-w-2xl lg:max-w-4xl">
-                        <img
-                            alt=""
-                            src="https://tailwindui.com/plus/img/logos/workcation-logo-indigo-600.svg"
-                            className="mx-auto h-12"
-                        />
-                        <figure className="mt-10">
-                            <blockquote className="text-center text-xl/8 font-semibold text-gray-900 sm:text-2xl/9">
-                                <p>
-                                    “Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias
-                                    molestiae. Numquam corrupti in laborum sed rerum et corporis.”
-                                </p>
-                            </blockquote>
-                            <figcaption className="mt-10">
-                                <img
-                                    alt=""
-                                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                    className="mx-auto size-10 rounded-full"
-                                />
-                                <div className="mt-4 flex items-center justify-center space-x-3 text-base">
-                                    <div className="font-semibold text-gray-900">Judith Black</div>
-                                    <svg width={3} height={3} viewBox="0 0 2 2" aria-hidden="true" className="fill-gray-900">
-                                        <circle r={1} cx={1} cy={1} />
-                                    </svg>
-                                    <div className="text-gray-600">CEO of Workcation</div>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-                {/* Sucess Stories card end*/}
-
                 {/* <!-- Card Blog --> */}
-                <div className="bg-white py-24 sm:py-32">
-                    <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                        <div className="mx-auto max-w-2xl lg:mx-0">
-                            <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">From the blog</h2>
-                            <p className="mt-2 text-lg/8 text-gray-600">Learn how to grow your business with our expert advice.</p>
-                        </div>
-                        <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-                            {posts.map((post) => (
-                                <article key={post.id} className="flex max-w-xl flex-col items-start justify-between">
-                                    <div className="flex items-center gap-x-4 text-xs">
-                                        <time dateTime={post.datetime} className="text-gray-500">
-                                            {post.date}
-                                        </time>
-                                        <a
-                                            href={post.category.href}
-                                            className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
-                                        >
-                                            {post.category.title}
-                                        </a>
-                                    </div>
-                                    <div className="group relative">
-                                        <h3 className="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
-                                            <a href={post.href}>
-                                                <span className="absolute inset-0" />
-                                                {post.title}
-                                            </a>
-                                        </h3>
-                                        <p className="mt-5 line-clamp-3 text-sm/6 text-gray-600">{post.description}</p>
-                                    </div>
-                                    <div className="relative mt-8 flex items-center gap-x-4">
-                                        <img alt="" src={post.author.imageUrl} className="size-10 rounded-full bg-gray-50" />
-                                        <div className="text-sm/6">
-                                            <p className="font-semibold text-gray-900">
-                                                <a href={post.author.href}>
-                                                    <span className="absolute inset-0" />
-                                                    {post.author.name}
-                                                </a>
-                                            </p>
-                                            <p className="text-gray-600">{post.author.role}</p>
-                                        </div>
-                                    </div>
-                                </article>
-                            ))}
-                        </div>
+                <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+                    {/* <!-- Title --> */}
+                    <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+                        <h2 className="text-2xl font-bold md:text-4xl md:leading-tight font-heading">Insights & Inspirations</h2>
+                        <p className="mt-1 text-gray-600 font-body">Stay informed with the latest stories, updates, and thought-provoking articles on education, empowerment, and innovation from the Seniom Foundation.</p>
                     </div>
+                    {/* <!-- End Title --> */}
+
+                    {/* <!-- Grid --> */}
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {/* <!-- Card --> */}
+                        <a className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5" href="#">
+                            <div className="aspect-w-16 aspect-h-11">
+                                <img className="w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1633114128174-2f8aa49759b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Blog Image" />
+                            </div>
+                            <div className="my-6">
+                                <h3 className="text-xl font-semibold text-gray-800 font-heading">
+                                    Bridging the Gap in Education
+                                </h3>
+                                <p className="mt-5 text-gray-600 font-body">
+                                    Discover how innovative strategies are empowering underprivileged students and transforming communities.
+                                </p>
+                            </div>
+                            <div className="mt-auto flex items-center gap-x-3">
+                                <img className="size-8 rounded-full" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+                                <div>
+                                    <h5 className="text-sm text-gray-800">By Lauren Waller</h5>
+                                </div>
+                            </div>
+                        </a>
+                        {/* <!-- End Card --> */}
+
+                        {/* <!-- Card --> */}
+                        <a className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5" href="#">
+                            <div className="aspect-w-16 aspect-h-11">
+                                <img className="w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1562851529-c370841f6536?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Blog Image" />
+                            </div>
+                            <div className="my-6">
+                                <h3 className="text-xl font-semibold text-gray-800 font-heading">
+                                    Unlocking Potential Through Technology
+
+                                </h3>
+                                <p className="mt-5 text-gray-600 font-body">
+                                    Explore how digital tools and e-learning are redefining access to quality education worldwide.
+                                </p>
+                            </div>
+                            <div className="mt-auto flex items-center gap-x-3">
+                                <img className="size-8 rounded-full" src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+                                <div>
+                                    <h5 className="text-sm text-gray-800">By Aaron Larsson</h5>
+                                </div>
+                            </div>
+                        </a>
+                        {/* <!-- End Card --> */}
+
+                        {/* <!-- Card --> */}
+                        <a className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5" href="#">
+                            <div className="aspect-w-16 aspect-h-11">
+                                <img className="w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1521321205814-9d673c65c167?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Blog Image" />
+                            </div>
+                            <div className="my-6">
+                                <h3 className="text-xl font-semibold text-gray-800 font-heading">
+                                    Inspiring Stories of Change
+                                </h3>
+                                <p className="mt-5 text-gray-600 font-body">
+                                    Meet the individuals whose lives have been transformed through the support of the Seniom Foundation.
+                                </p>
+                            </div>
+                            <div className="mt-auto flex items-center gap-x-3">
+                                <img className="size-8 rounded-full" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+                                <div>
+                                    <h5 className="text-sm text-gray-800">By Lauren Waller</h5>
+                                </div>
+                            </div>
+                        </a>
+                        {/* <!-- End Card --> */}
+                    </div>
+                    {/* <!-- End Grid --> */}
+
+                    {/* <!-- Card --> */}
+                    <div class="mt-12 text-center">
+                        <a class="py-3 px-4 inline-flex items-center gap-x-1 text-sm font-medium rounded-lg border border-gray-200 bg-white text-secondary shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" href="/blog">
+                            Read more
+                            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+                        </a>
+                    </div>
+                    {/* <!-- End Card --> */}
                 </div>
                 {/* <!-- End Card Blog --> */}
 
@@ -415,20 +415,20 @@ export default function Index({ auth, laravelVersion, phpVersion }) {
                             </svg>
                             <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
                                 <h2 className="text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl font-heading">
-                                    Boost your productivity. Start using our app today.
+                                Be Part of the Change
                                 </h2>
                                 <p className="mt-6 text-pretty text-lg/8 text-gray-600 font-body">
-                                    Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla.
+                                Your support can help us empower more lives through education and innovation. Together, we can build a brighter future.
                                 </p>
                                 <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
                                     <a
                                         href="#"
-                                        className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                                        className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition duration-500 font-body"
                                     >
-                                        Get started
+                                        Donate Now
                                     </a>
-                                    <a href="#" className="text-sm/6 font-semibold text-white">
-                                        Learn more <span aria-hidden="true">→</span>
+                                    <a href="#" className="text-sm/6 font-semibold text-white font-body">
+                                    Get Involved <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -447,155 +447,146 @@ export default function Index({ auth, laravelVersion, phpVersion }) {
                 {/* CTA SECTION ENDS */}
 
                 {/* <!-- Team --> */}
-                <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto bg-white">
+                <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
                     {/* <!-- Title --> */}
                     <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-                        <h2 className="text-2xl font-bold md:text-4xl md:leading-tight">Our leadership</h2>
+                        <h2 className="text-2xl font-bold md:text-4xl md:leading-tight capitalize font-heading">Our Board of trustees</h2>
+                        <p className='font-body text-gray-600'>Meet the dedicated leaders driving our mission to empower communities and transform lives through education and innovation.</p>
                     </div>
                     {/* <!-- End Title --> */}
 
                     {/* <!-- Grid --> */}
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
                         <div className="text-center">
-                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="/assets/img/Chibugo Ernest.jpg" alt="Avatar" />
                             <div className="mt-2 sm:mt-4">
                                 <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg">
-                                    David Forren
+                                    Chibugo Ernest
                                 </h3>
                                 <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
-                                    Founder / CEO
+
                                 </p>
                             </div>
                         </div>
                         {/* <!-- End Col --> */}
 
                         <div className="text-center">
-                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="/assets/img/donald okolo.jpg" alt="Avatar" />
                             <div className="mt-2 sm:mt-4">
                                 <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg">
-                                    Amil Evara
+                                    Donald Okolo
                                 </h3>
                                 <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
-                                    UI/UX Designer
+
                                 </p>
                             </div>
                         </div>
                         {/* <!-- End Col --> */}
 
                         <div className="text-center">
-                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="/assets/img/Lady Anuli Vivian Okolo (LSM).jpg" alt="Avatar" />
                             <div className="mt-2 sm:mt-4">
                                 <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg">
-                                    Ebele Egbuna
+                                    Anuli Vivian Okolo
                                 </h3>
                                 <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
-                                    Support Consultant
+                                    LSM
                                 </p>
                             </div>
                         </div>
                         {/* <!-- End Col --> */}
 
                         <div className="text-center">
-                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="/assets/img/4.jpg" alt="Avatar" />
                             <div className="mt-2 sm:mt-4">
                                 <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg">
-                                    Maria Powers
+                                    Victoria Uche Okolo
                                 </h3>
                                 <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
-                                    Director of sales
+                                    LSM
                                 </p>
                             </div>
                         </div>
                         {/* <!-- End Col --> */}
 
                         <div className="text-center">
-                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="/assets/img/5.jpg" alt="Avatar" />
                             <div className="mt-2 sm:mt-4">
                                 <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg">
-                                    Delia Pawelke
+                                    Ogonna Osita-Okoli
                                 </h3>
                                 <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
-                                    Front-end Developer
+
                                 </p>
                             </div>
                         </div>
                         {/* <!-- End Col --> */}
 
                         <div className="text-center">
-                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://images.unsplash.com/photo-1624224971170-2f84fed5eb5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="/assets/img/6.jpg" alt="Avatar" />
                             <div className="mt-2 sm:mt-4">
                                 <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg">
-                                    Tom Lowry
+                                    Ijeoma Jeff-Ezechukwu
                                 </h3>
                                 <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
-                                    UI/UX Designer
+
                                 </p>
                             </div>
                         </div>
                         {/* <!-- End Col --> */}
 
                         <div className="text-center">
-                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://images.unsplash.com/photo-1579017331263-ef82f0bbc748?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="/assets/img/7.jpg" alt="Avatar" />
                             <div className="mt-2 sm:mt-4">
                                 <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg">
-                                    Louise Donadieu
+                                    Nkiruka Innocent-Okoli
                                 </h3>
                                 <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
-                                    Support Consultant
+
                                 </p>
                             </div>
                         </div>
                         {/* <!-- End Col --> */}
 
                         <div className="text-center">
-                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://images.unsplash.com/photo-1514222709107-a180c68d72b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
+                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="/assets/img/8.jpg" alt="Avatar" />
                             <div className="mt-2 sm:mt-4">
                                 <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg">
-                                    Jeff Fisher
+                                    Very Rev. Fr. Benedict Sunday Okoli
                                 </h3>
                                 <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
-                                    Project Manager
+                                    Very Reverend Father
                                 </p>
                             </div>
                         </div>
                         {/* <!-- End Col --> */}
 
-                        <div className="text-center">
-                            <img className="rounded-xl sm:size-48 lg:size-60 mx-auto" src="https://images.unsplash.com/photo-1602452920335-6a132309c7c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
-                            <div className="mt-2 sm:mt-4">
-                                <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg">
-                                    Sophia Harrington
-                                </h3>
-                                <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
-                                    Project Manager
-                                </p>
-                            </div>
-                        </div>
-                        {/* <!-- End Col --> */}
+
+
                     </div>
                     {/* <!-- End Grid --> */}
                 </div>
                 {/* <!-- End Team --> */}
 
                 {/* contact us */}
-                <section className="text-gray-600 body-font relative">
+                <section className="text-gray-600 body-font relative bg-white">
                     <div className="container px-5 py-24 mx-auto">
                         <div className="flex flex-col text-center w-full mb-12">
-                            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 font-heading">Contact Us</h1>
-                            <p className="lg:w-2/3 mx-auto leading-relaxed text-base font-body">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify.</p>
+                            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 font-heading">Get in Touch with Us</h1>
+                            <p className="lg:w-2/3 mx-auto leading-relaxed text-base font-body">Have questions, want to collaborate, or need more information? We’d love to hear from you!</p>
                         </div>
                         <div className="lg:w-1/2 md:w-2/3 mx-auto">
                             <div className="flex flex-wrap -m-2">
                                 <div className="p-2 w-1/2">
                                     <div className="relative">
                                         <label for="name" className="leading-7 text-sm text-gray-600">Name</label>
-                                        <input type="text" id="name" name="name" className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-secondary-light focus:bg-white focus:ring-2 focus:ring-secondary-light text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+                                        <input type="text" id="name" name="name" className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-secondary-light focus:bg-white focus:ring-2 focus:ring-secondary-light text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                                     </div>
                                 </div>
                                 <div className="p-2 w-1/2">
                                     <div className="relative">
                                         <label for="email" className="leading-7 text-sm text-gray-600">Email</label>
-                                        <input type="email" id="email" name="email" className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-secondary-light focus:bg-white focus:ring-2 focus:ring-secondary-light text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+                                        <input type="email" id="email" name="email" className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-secondary-light focus:bg-white focus:ring-2 focus:ring-secondary-light text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                                     </div>
                                 </div>
                                 <div className="p-2 w-full">
@@ -605,12 +596,12 @@ export default function Index({ auth, laravelVersion, phpVersion }) {
                                     </div>
                                 </div>
                                 <div className="p-2 w-full">
-                                    <button className="flex mx-auto text-white bg-secondary border-0 py-2 px-8 focus:outline-none hover:bg-secondary-light rounded text-lg">Button</button>
+                                    <button className="flex mx-auto text-white bg-secondary border-0 py-2 px-8 focus:outline-none hover:bg-secondary-light rounded text-lg">Send Message</button>
                                 </div>
                                 <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-                                    <a className="text-secondary-light">example@email.com</a>
-                                    <p className="leading-normal my-5">49 Smith St.
-                                        <br/>Saint Cloud, MN 56301
+                                    <a className="text-secondary-light"> info@seniomfoundation.org</a>
+                                    <p className="text-secondary-accent"> +234 800 123 4567</p>
+                                    <p className="leading-normal my-5">123 Foundation Avenue, Lagos, Nigeria
                                     </p>
                                     <span className="inline-flex">
                                         <a className="text-gray-500">
