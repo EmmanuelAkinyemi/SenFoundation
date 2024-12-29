@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\BlogController;
 
 use Inertia\Inertia;
 
@@ -15,6 +16,15 @@ Route::get('/services', [PageController::class, 'services'])->name('services');
 Route::get('/blog', [PageController::class, 'blog'])->name('blog');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard/blog', [BlogController::class, 'index'])->name('blog');
+    Route::get('/dashboard/blog/create', [BlogController::class, 'create'])->name('blog.create');
+    Route::post('/dashboard/blog', [BlogController::class, 'store'])->name('blog.store');
+    Route::get('/dashboard/blog/{blog}/edit', [BlogController::class, 'edit'])->name('blog.edit');
+    Route::patch('/dashboard/blog/{blog}', [BlogController::class, 'update'])->name('blog.update');
+    Route::get('/dashboard/blog/{blog}', [BlogController::class, 'show'])->name('blog.show');
+    Route::delete('/dashboard/blog/{blog}', [BlogController::class, 'destroy'])->name('blog.destroy');
+});
 
 
 // Route::get('/', function () {
@@ -36,4 +46,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
