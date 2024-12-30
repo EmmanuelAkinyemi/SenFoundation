@@ -5,6 +5,8 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CategoryController;
+
 
 use Inertia\Inertia;
 
@@ -26,15 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/dashboard/blog/{blog}', [BlogController::class, 'destroy'])->name('blog.destroy');
 });
 
-
-// Route::get('/', function () {
-//     return Inertia::render('Home', [
-//         'canLogin' => Route::has('login'),
-//         'canRegister' => Route::has('register'),
-//         'laravelVersion' => Application::VERSION,
-//         'phpVersion' => PHP_VERSION,
-//     ]);
-// });
+Route::resource('category', CategoryController::class);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard/index');
