@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Illuminate\Support\Str;
+use App\Models\Category;
 
 class BlogController extends Controller
 {
@@ -14,7 +16,7 @@ class BlogController extends Controller
     public function index()
     {
         return Inertia::render('Dashboard/Blog/index', [
-            'blogs' => Blog::all()
+            'blogs' => Blog::with('category')->get()
         ]);
     }
 
@@ -23,7 +25,9 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Dashboard/Blog/create');
+        $categories = Category::all();
+        return Inertia::render('Dashboard/Blog/create', [
+            'categories' => $categories,]);
     }
 
     /**
@@ -31,48 +35,84 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        Blog::create($request->all());
+        // Validate the request data
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+            'category_id' => 'required|exists:categories,id',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048', // Max file size: 2MB
+        ]);
 
-        return redirect()->route('blog.index');
+        // Handle image upload if provided
+        $imagePath = null;
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('blog_images', 'public'); // Store image in 'storage/app/public/blog_images'
+        }
+
+        // Create the blog post
+        $blog = Blog::create([
+            'title' => $validated['title'],
+            'slug' => Str::slug($validated['title']), // Generate a unique slug from the title
+            'content' => $validated['content'],
+            'category_id' => $validated['category_id'],
+            'image' => $imagePath,
+            'user_id' => auth()->id(), // Associate the blog with the currently authenticated user
+        ]);
+
+        return redirect()->route('blog.index')-> with('success', 'Blog post created successfully!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Blog $blog)
+    public function show($id)
     {
+        $blog = Blog::findOrFail($id);
+    
         return Inertia::render('Dashboard/Blog/show', [
             'blog' => $blog
         ]);
-    }
+    }   
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Blog $blog)
+    public function edit($id)
     {
-        return Inertia::render('Dashboard/Blog/edit', [
-            'blog' => $blog
-        ]);
+        $blog = Blog::findOrFail($id);
+    $categories = Category::all(); // Ensure this fetches categories
+
+    return Inertia::render('Dashboard/Blog/edit', [
+        'blog' => $blog,
+        'categories' => $categories,
+    ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Blog $blog)
+    public function update(Request $request, $id)
     {
-        $blog->update($request->all());
-
-        return redirect()->route('blog.index');
+        $validatedData = $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+            'category' => 'nullable|string|max:255',
+        ]);
+    
+        $blog = Blog::findOrFail($id);
+        $blog->update($validatedData);
+    
+        return redirect()->route('blog.index')->with('success', 'Blog updated successfully.');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Blog $blog)
+    public function destroy($id)
     {
+        $blog = Blog::findOrFail($id);
         $blog->delete();
-
-        return redirect()->route('blog.index');
+    
+        return redirect()->route('blog.index')->with('success', 'Blog post deleted successfully');
     }
 }

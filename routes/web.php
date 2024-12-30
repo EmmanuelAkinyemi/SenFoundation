@@ -17,12 +17,12 @@ Route::get('/blog', [PageController::class, 'blog'])->name('blog');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard/blog', [BlogController::class, 'index'])->name('blog');
+    Route::get('/dashboard/blog', [BlogController::class, 'index'])->name('blog.index');
     Route::get('/dashboard/blog/create', [BlogController::class, 'create'])->name('blog.create');
     Route::post('/dashboard/blog', [BlogController::class, 'store'])->name('blog.store');
-    Route::get('/dashboard/blog/{blog}/edit', [BlogController::class, 'edit'])->name('blog.edit');
-    Route::patch('/dashboard/blog/{blog}', [BlogController::class, 'update'])->name('blog.update');
-    Route::get('/dashboard/blog/{blog}', [BlogController::class, 'show'])->name('blog.show');
+    Route::get('/dashboard/blog/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
+    Route::put('/dashboard/blog/{id}', [BlogController::class, 'update'])->name('blog.update');
+    Route::get('/dashboard/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
     Route::delete('/dashboard/blog/{blog}', [BlogController::class, 'destroy'])->name('blog.destroy');
 });
 
