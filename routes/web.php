@@ -26,9 +26,16 @@ Route::middleware('auth')->group(function () {
     Route::put('/dashboard/blog/{id}', [BlogController::class, 'update'])->name('blog.update');
     Route::get('/dashboard/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
     Route::delete('/dashboard/blog/{blog}', [BlogController::class, 'destroy'])->name('blog.destroy');
+
+    Route::get('/dashboard/category', [CategoryController::class, 'index'])->name('category.index');
+    Route::get('/dashboard/category/create', [CategoryController::class, 'create'])->name('category.create');
+    Route::post('/dashboard/category', [CategoryController::class, 'store'])->name('category.store');
+    Route::get('/dashboard/category/{id}/edit', [CategoryController::class, 'edit'])->name('category.edit');
+    Route::put('/dashboard/category/{id}', [CategoryController::class, 'update'])->name('category.update');
+    Route::delete('/dashboard/category/{category}', [CategoryController::class, 'destroy'])->name('category.destroy');
 });
 
-Route::resource('category', CategoryController::class);
+// Route::resource('category', CategoryController::class);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard/index');
