@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Illuminate\Support\Str;
+
 
 class CategoryController extends Controller
 {
@@ -26,7 +28,10 @@ class CategoryController extends Controller
             'name' => 'required|string|max:255|unique:categories',
         ]);
 
-        Category::create($validated);
+        Category::create([
+            'name' => $validated['name'],
+            'slug' => Str::slug($validated['name']),
+        ]);
 
         return redirect()->route('category.index')->with('success', 'Category created successfully!');
     }
