@@ -1,14 +1,10 @@
 import BreadCrumbs from "@/Components/BreadCrumbs";
 import Pagination from "@/Components/Pagination";
 import SideNav from "@/Components/SideNav";
-import { Head } from "@inertiajs/react";
+import { Head, Link } from "@inertiajs/react";
 
 const Index = ({ blogs }) => {
-    const handleDelete = (id) => {
-        if (window.confirm("Are you sure you want to delete this blog post?")) {
-            Inertia.delete(`/blog/${id}`);
-        }
-    };
+    
 
     return (
         <>
@@ -142,12 +138,14 @@ const Index = ({ blogs }) => {
                                                                                     </a>
                                                                                 </div>
                                                                                 <div className="py-2 first:pt-0 last:pb-0">
-                                                                                    <button
-                                                                                        className="text-red-600"
-                                                                                        onClick={() => handleDelete(blog.id)} // Delete button
+                                                                                    <Link
+                                                                                        href={`/dashboard/blog/${blog.id}`}
+                                                                                        method="delete"
+                                                                                        as="button"
+                                                                                        className="text-red-600 ps-2"
                                                                                     >
                                                                                         Delete
-                                                                                    </button>
+                                                                                    </Link>
                                                                                 </div>
                                                                             </div>
                                                                         </div>

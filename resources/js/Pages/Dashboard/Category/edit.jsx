@@ -1,8 +1,9 @@
 import { Head, Link, useForm } from '@inertiajs/react';
-import React from 'react';
+import React, { useEffect } from 'react';
 import BreadCrumbs from '@/Components/BreadCrumbs';
 import SideNav from '@/Components/SideNav';
 import Pagination from '@/Components/Pagination';
+
 
 const Edit = ({ category }) => {
     const { data, setData, put, processing, errors } = useForm({
@@ -11,12 +12,19 @@ const Edit = ({ category }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        put(`dashboard/category/${category.id}`);
+        put(route('category.update', category.id)); 
     };
+
+    useEffect(() => {
+        setData({
+            ...data,
+            name: category.name,
+        });
+    }, [category]);
 
     return (
         <>
-            <Head title='Edit category' />
+            <Head title={`Edit Category - ${category.name}`}  />
             <div className="bg-gray-50 transition-all duration-300 lg:hs-overlay-layout-open:ps-[260px]">
                 {/* <!-- ========== MAIN CONTENT ========== --> */}
                 <main id="content">

@@ -27,7 +27,8 @@ class BlogController extends Controller
     {
         $categories = Category::all();
         return Inertia::render('Dashboard/Blog/create', [
-            'categories' => $categories,]);
+            'categories' => $categories,
+        ]);
     }
 
     /**
@@ -59,7 +60,7 @@ class BlogController extends Controller
             'user_id' => auth()->id(), // Associate the blog with the currently authenticated user
         ]);
 
-        return redirect()->route('blog.index')-> with('success', 'Blog post created successfully!');
+        return redirect()->route('blog.index')->with('success', 'Blog post created successfully!');
     }
 
     /**
@@ -67,12 +68,12 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        $blog = Blog::findOrFail($id);
-    
+        $blog = Blog::with('category')->findOrFail($id);
+
         return Inertia::render('Dashboard/Blog/show', [
-            'blog' => $blog
+            'blog' => $blog,
         ]);
-    }   
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -80,12 +81,12 @@ class BlogController extends Controller
     public function edit($id)
     {
         $blog = Blog::findOrFail($id);
-    $categories = Category::all(); // Ensure this fetches categories
+        $categories = Category::all(); // Ensure this fetches categories
 
-    return Inertia::render('Dashboard/Blog/edit', [
-        'blog' => $blog,
-        'categories' => $categories,
-    ]);
+        return Inertia::render('Dashboard/Blog/edit', [
+            'blog' => $blog,
+            'categories' => $categories,
+        ]);
     }
 
     /**
@@ -98,10 +99,10 @@ class BlogController extends Controller
             'content' => 'required|string',
             'category' => 'nullable|string|max:255',
         ]);
-    
+
         $blog = Blog::findOrFail($id);
         $blog->update($validatedData);
-    
+
         return redirect()->route('blog.index')->with('success', 'Blog updated successfully.');
     }
 
@@ -112,7 +113,7 @@ class BlogController extends Controller
     {
         $blog = Blog::findOrFail($id);
         $blog->delete();
-    
+
         return redirect()->route('blog.index')->with('success', 'Blog post deleted successfully');
     }
 }

@@ -28,10 +28,10 @@ const Index = ({ categories }) => {
                                                 <div className="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200">
                                                     <div>
                                                         <h2 className="text-xl font-semibold text-gray-800">
-                                                            Articles
+                                                            Categories
                                                         </h2>
                                                         <p className="text-sm text-gray-600">
-                                                            Create articles, edit, delete and more.
+                                                            Create categories, edit and delete
                                                         </p>
                                                     </div>
 
