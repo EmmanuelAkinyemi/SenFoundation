@@ -41,15 +41,15 @@ const Footer = () => {
                         <div className="col-span-2">
                             <h4 className="font-semibold text-gray-100">Subscribe to our newsletter</h4>
 
-                            <form>
+                            <form action="/subscribe" method="POST">
                                 <div className="mt-4 flex flex-col items-center gap-2 sm:flex-row sm:gap-3 bg-white rounded-lg p-2 dark:bg-neutral-900">
                                     <div className="w-full">
                                         <label for="hero-input" className="sr-only">Subscribe</label>
-                                        <input type="text" id="hero-input" name="hero-input" className="py-3 px-4 block w-full border-transparent rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Enter your email" />
+                                        <input type="text" id="hero-input" name="email" className="py-3 px-4 block w-full border-transparent rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Enter your email" />
                                     </div>
-                                    <a className="w-full sm:w-auto whitespace-nowrap p-3 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-primary text-white hover:bg-primary-light focus:outline-none focus:bg-primary-light disabled:opacity-50 disabled:pointer-events-none transition duration-500" href="#">
+                                    <button type="submit" className="w-full sm:w-auto whitespace-nowrap p-3 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-primary text-white hover:bg-primary-light focus:outline-none focus:bg-primary-light disabled:opacity-50 disabled:pointer-events-none transition duration-500">
                                         Subscribe
-                                    </a>
+                                    </button>
                                 </div>
                                 <p className="mt-3 text-sm text-gray-400">
                                  Stay ahead with our updates

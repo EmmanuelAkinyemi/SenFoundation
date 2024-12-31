@@ -7,6 +7,8 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\ContactUsController;
 
 
 use Inertia\Inertia;
@@ -29,8 +31,8 @@ Route::get('/blog', [PageController::class, 'blog'])->name('blog');
 Route::get('/latest-blog', [PageController::class, 'latest'])->name('blogs.latest');
 Route::get('/blog/{slug}', [PageController::class, 'show'])->name('blogs.show');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
-
-
+Route::post('/contact-us', [ContactUsController::class, 'store'])->name('contact.store');
+Route::post('/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
 
 Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     Route::resource('category', CategoryController::class);
