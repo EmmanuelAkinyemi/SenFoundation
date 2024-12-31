@@ -1,7 +1,7 @@
 import BreadCrumbs from '@/Components/BreadCrumbs';
 import SideNav from '@/Components/SideNav';
 import React, { useState } from "react";
-import { useForm, usePage } from "@inertiajs/react";
+import { useForm, usePage, } from "@inertiajs/react";
 
 const Create = () => {
     const { categories } = usePage().props; // Categories passed from the controller

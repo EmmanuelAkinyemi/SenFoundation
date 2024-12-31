@@ -10,14 +10,6 @@ use App\Http\Controllers\CategoryController;
 
 use Inertia\Inertia;
 
-
-
-Route::get('/', [PageController::class, 'home'])->name('home');
-Route::get('/about', [PageController::class, 'about'])->name('about');
-Route::get('/services', [PageController::class, 'services'])->name('services');
-Route::get('/blog', [PageController::class, 'blog'])->name('blog');
-Route::get('/contact', [PageController::class, 'contact'])->name('contact');
-
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard/blog', [BlogController::class, 'index'])->name('blog.index');
     Route::get('/dashboard/blog/create', [BlogController::class, 'create'])->name('blog.create');
@@ -27,13 +19,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
     Route::delete('/dashboard/blog/{blog}', [BlogController::class, 'destroy'])->name('blog.destroy');
 
-    // Route::get('/dashboard/category', [CategoryController::class, 'index'])->name('category.index');
-    // Route::get('/dashboard/category/create', [CategoryController::class, 'create'])->name('category.create');
-    // Route::post('/dashboard/category', [CategoryController::class, 'store'])->name('category.store');
-    // Route::get('/dashboard/category/{id}/edit', [CategoryController::class, 'edit'])->name('category.edit');
-    // Route::put('/dashboard/category/{id}', [CategoryController::class, 'update'])->name('category.update');
-    // Route::delete('/dashboard/category/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
 });
+
+Route::get('/', [PageController::class, 'home'])->name('home');
+Route::get('/about', [PageController::class, 'about'])->name('about');
+Route::get('/services', [PageController::class, 'services'])->name('services');
+Route::get('/blog', [PageController::class, 'blog'])->name('blog');
+Route::get('/latest-blog', [PageController::class, 'latest'])->name('blogs.latest');
+Route::get('/blog/{blog:slug}', [BlogController::class, 'show'])->name('blogs.show');
+Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+
+
 
 Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     Route::resource('category', CategoryController::class);

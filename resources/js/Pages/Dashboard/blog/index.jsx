@@ -1,14 +1,15 @@
 import BreadCrumbs from "@/Components/BreadCrumbs";
 import Pagination from "@/Components/Pagination";
 import SideNav from "@/Components/SideNav";
-import { Head, Link } from "@inertiajs/react";
+import { Head, Link, usePage } from "@inertiajs/react";
 
 const Index = ({ blogs }) => {
-    
+    const { flash } = usePage().props;
 
     return (
         <>
             <Head title="Dashboard-Blog" />
+       
             <div className="bg-gray-50 transition-all duration-300 lg:hs-overlay-layout-open:ps-[260px]">
                 {/* <!-- ========== MAIN CONTENT ========== --> */}
                 <main id="content">

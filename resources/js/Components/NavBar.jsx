@@ -4,19 +4,44 @@ import { Link, usePage } from '@inertiajs/react';
 const NavBar = () => {
     const { url } = usePage();
     const [isScrolled, setIsScrolled] = useState(false);
+    const [activeSection, setActiveSection] = useState('home');
 
     useEffect(() => {
+        // Handle scroll for sticky effect
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 20);
         };
+
+        // Intersection Observer for scrollspy
+        const sections = document.querySelectorAll('section[id]');
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id);
+                    }
+                });
+            },
+            { threshold: 0.5 }
+        );
+
+        sections.forEach((section) => observer.observe(section));
+
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            sections.forEach((section) => observer.unobserve(section));
+        };
     }, []);
+
+    const isActive = (link) => activeSection === link || (link === 'blog' && url === '/blog');
 
     return (
         <header
-            className={`sticky top-0 inset-x-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 shadow-lg backdrop-blur-md' : 'bg-white/50 backdrop-blur'
-                }`}
+            className={`sticky top-0 inset-x-0 z-50 transition-all duration-300 ${
+                isScrolled ? 'bg-white/80 shadow-lg backdrop-blur-md' : 'bg-white/50 backdrop-blur'
+            }`}
         >
             <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 md:py-4">
                 {/* Logo */}
@@ -25,7 +50,7 @@ const NavBar = () => {
                     className="text-xl font-bold text-gray-800 hover:opacity-80 transition"
                     aria-label="Brand Logo"
                 >
-                    <img src="/assets/img/logo.png" width="80" height="auto" alt="Seniom Foundation" className='' />
+                    <img src="/assets/img/logo.png" width="80" height="auto" alt="Seniom Foundation" />
                 </Link>
 
                 {/* Mobile Collapse Button */}
@@ -52,37 +77,38 @@ const NavBar = () => {
                     id="navbar-menu"
                     className="hidden md:flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6"
                 >
-                    <Link
+                    <a
                         href="/"
-                        className={`text-sm font-medium text-gray-800 ${url === '/' ? 'text-primary' : 'hover:text-red-600 transition'}`}
+                        className={`text-sm font-medium ${isActive('home') ? 'text-red-600 scale-105' : 'text-gray-800 hover:text-red-600'} transition`}
                     >
                         Home
-                    </Link>
-                    <Link
-                        href={route('about')}
-                        className={`text-sm font-medium text-gray-800 ${url === '/about' ? 'text-primary' : 'hover:text-red-600 transition'}`}
+                    </a>
+                    <a
+                        href="#about"
+                        className={`text-sm font-medium ${isActive('about') ? 'text-red-600 scale-105' : 'text-gray-800 hover:text-red-600'} transition`}
                     >
                         About
-                    </Link>
-                    <Link
-                        href={route('services')}
-                        className={`text-sm font-medium text-gray-800 ${url === '/services' ? 'text-primary' : 'hover:text-red-600 transition'}`}
+                    </a>
+                    <a
+                        href="#services"
+                        className={`text-sm font-medium ${isActive('services') ? 'text-red-600 scale-105' : 'text-gray-800 hover:text-red-600'} transition`}
                     >
                         Services
-                    </Link>
+                    </a>
+                    
                     <Link
-                        href={route('blog')}
-                        className={`text-sm font-medium text-gray-800 ${url === '/blog' ? 'text-primary' : 'hover:text-red-600 transition'}`}
+                        href="#blog"
+                        className={`text-sm font-medium ${isActive('blog') ? 'text-red-600 scale-105' : 'text-gray-800 hover:text-red-600'} transition`}
                     >
                         Blog
                     </Link>
 
-                    <Link
-                        href={route('contact')}
-                        className={`text-sm font-medium text-gray-800 ${url === '/contact' ? 'text-primary' : 'hover:text-red-600 transition'}`}
+                    <a
+                        href="#contact"
+                        className={`text-sm font-medium ${isActive('contact') ? 'text-red-600 scale-105' : 'text-gray-800 hover:text-red-600'} transition`}
                     >
                         Contact Us
-                    </Link>
+                    </a>
                 </div>
 
                 {/* Donate Button */}
