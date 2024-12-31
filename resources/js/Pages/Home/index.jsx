@@ -2,47 +2,7 @@ import { Head, Link } from '@inertiajs/react';
 import NavBar from '@/Components/NavBar';
 import Footer from '@/Components/Footer';
 
-const posts = [
-    {
-        id: 1,
-        title: 'Boost your conversion rate',
-        href: '#',
-        description:
-            'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-        date: 'Mar 16, 2020',
-        datetime: '2020-03-16',
-        category: { title: 'Marketing', href: '#' },
-        author: {
-            name: 'Michael Foster',
-            role: 'Co-Founder / CTO',
-            href: '#',
-            imageUrl:
-                'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        },
-
-    },
-    {
-        id: 2,
-        title: 'Boost your conversion rate',
-        href: '#',
-        description:
-            'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-        date: 'Mar 16, 2020',
-        datetime: '2020-03-16',
-        category: { title: 'Marketing', href: '#' },
-        author: {
-            name: 'Michael Foster',
-            role: 'Co-Founder / CTO',
-            href: '#',
-            imageUrl:
-                'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        },
-
-    },
-    // More posts...
-]
-
-export default function Index({ auth, laravelVersion, phpVersion }) {
+export default function Index({ blogs}) {
     const handleImageError = () => {
         document
             .getElementById('screenshot-container')
@@ -317,71 +277,29 @@ export default function Index({ auth, laravelVersion, phpVersion }) {
                     {/* <!-- Grid --> */}
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {/* <!-- Card --> */}
-                        <a className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5" href="#">
+                        {blogs.map((blog) => (
+                        <a key={blog.id} className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5" href={`/blog/${blog.id}`}>
                             <div className="aspect-w-16 aspect-h-11">
-                                <img className="w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1633114128174-2f8aa49759b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Blog Image" />
+                                <img className="h-48 w-auto  object-cover rounded-xl" src={`/storage/${blog.image}`}  alt={blog.title} />
                             </div>
                             <div className="my-6">
                                 <h3 className="text-xl font-semibold text-gray-800 font-heading">
-                                    Bridging the Gap in Education
+                                {blog.title}
                                 </h3>
-                                <p className="mt-5 text-gray-600 font-body">
-                                    Discover how innovative strategies are empowering underprivileged students and transforming communities.
+                                <p className="mt-5 text-gray-500 font-body overflow-hidden line-clamp-3">   
+                                {blog.content}
                                 </p>
                             </div>
                             <div className="mt-auto flex items-center gap-x-3">
-                                <img className="size-8 rounded-full" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
                                 <div>
-                                    <h5 className="text-sm text-gray-800">By Lauren Waller</h5>
+                                    <h5 className="text-sm text-gray-800">By {blog.user.name}</h5>
                                 </div>
                             </div>
                         </a>
+                        ))}
                         {/* <!-- End Card --> */}
 
-                        {/* <!-- Card --> */}
-                        <a className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5" href="#">
-                            <div className="aspect-w-16 aspect-h-11">
-                                <img className="w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1562851529-c370841f6536?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Blog Image" />
-                            </div>
-                            <div className="my-6">
-                                <h3 className="text-xl font-semibold text-gray-800 font-heading">
-                                    Unlocking Potential Through Technology
-
-                                </h3>
-                                <p className="mt-5 text-gray-600 font-body">
-                                    Explore how digital tools and e-learning are redefining access to quality education worldwide.
-                                </p>
-                            </div>
-                            <div className="mt-auto flex items-center gap-x-3">
-                                <img className="size-8 rounded-full" src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
-                                <div>
-                                    <h5 className="text-sm text-gray-800">By Aaron Larsson</h5>
-                                </div>
-                            </div>
-                        </a>
-                        {/* <!-- End Card --> */}
-
-                        {/* <!-- Card --> */}
-                        <a className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5" href="#">
-                            <div className="aspect-w-16 aspect-h-11">
-                                <img className="w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1521321205814-9d673c65c167?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Blog Image" />
-                            </div>
-                            <div className="my-6">
-                                <h3 className="text-xl font-semibold text-gray-800 font-heading">
-                                    Inspiring Stories of Change
-                                </h3>
-                                <p className="mt-5 text-gray-600 font-body">
-                                    Meet the individuals whose lives have been transformed through the support of the Seniom Foundation.
-                                </p>
-                            </div>
-                            <div className="mt-auto flex items-center gap-x-3">
-                                <img className="size-8 rounded-full" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar" />
-                                <div>
-                                    <h5 className="text-sm text-gray-800">By Lauren Waller</h5>
-                                </div>
-                            </div>
-                        </a>
-                        {/* <!-- End Card --> */}
+                        
                     </div>
                     {/* <!-- End Grid --> */}
 
@@ -572,7 +490,7 @@ export default function Index({ auth, laravelVersion, phpVersion }) {
                 <section className="text-gray-600 body-font relative bg-white">
                     <div className="container px-5 py-24 mx-auto">
                         <div className="flex flex-col text-center w-full mb-12">
-                            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 font-heading">Get in Touch with Us</h1>
+                            <h1 className="sm:text-3xl text-3xl font-bold title-font mb-4 text-gray-900 font-heading">Get in Touch with Us</h1>
                             <p className="lg:w-2/3 mx-auto leading-relaxed text-base font-body">Have questions, want to collaborate, or need more information? We’d love to hear from you!</p>
                         </div>
                         <div className="lg:w-1/2 md:w-2/3 mx-auto">

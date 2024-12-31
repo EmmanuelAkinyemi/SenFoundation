@@ -71,7 +71,7 @@ class BlogController extends Controller
         $blog = Blog::with('category')->findOrFail($id);
 
         return Inertia::render('Dashboard/Blog/show', [
-            'blog' => $blog,
+            'blog' => $blog->load('user', 'category'),
         ]);
     }
 

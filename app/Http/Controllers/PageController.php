@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use inertia\inertia;
+use App\Models\Blog;
 
 class PageController extends Controller
 {
@@ -14,9 +15,10 @@ class PageController extends Controller
 
     public function home()
     {
+        
+        $blogs = Blog::latest()->take(3)->with('category')->get(); // Display 6 latest blogs
         return Inertia::render('Home/index', [
-            'title' => 'Home - Seniom Foundation',
-            'description' => 'Welcome to Seniom Foundation, empowering education and enriching lives.',
+            'blogs' => $blogs->load('user'),
         ]);
     }
 
@@ -37,9 +39,10 @@ class PageController extends Controller
 
     public function blog()
     {
+        $blogs = Blog::latest()->with('category')->paginate(9); // Paginate for blog page
+
         return Inertia::render('Blog/index', [
-            'title' => 'Blog - Seniom Foundation',
-            'description' => 'Read the latest updates and stories from Seniom Foundation.',
+            'blogs' => $blogs,
         ]);
     }
 
