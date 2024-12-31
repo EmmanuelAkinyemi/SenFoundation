@@ -12,11 +12,11 @@ const Blog = ({ title }) => {
                 <div className="relative overflow-hidden">
                     <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-24">
                         <div className="text-center">
-                            <h1 className="text-4xl sm:text-6xl font-bold text-gray-800">
+                            <h1 className="text-4xl sm:text-6xl font-heading font-bold text-gray-800">
                                 Insights
                             </h1>
 
-                            <p className="mt-3 text-gray-600">
+                            <p className="mt-3 text-gray-600 font-body">
                                 Stay in the know with insights from industry experts.
                             </p>
 
@@ -79,30 +79,24 @@ const Blog = ({ title }) => {
                             </p>
 
                             <h2 className="text-2xl font-bold md:text-3xl lg:text-4xl lg:leading-tight xl:text-5xl xl:leading-tight text-gray-800">
-                                <a className="hover:text-blue-600 focus:outline-none focus:text-blue-600" href="#">
+                                <a className="hover:text-blue-600 focus:outline-none focus:text-blue-600 font-heading" href="#">
                                     How to get buy-in and budget for direct hiring
                                 </a>
                             </h2>
 
                             {/* <!-- Avatar --> */}
                             <div className="mt-6 sm:mt-10 flex items-center">
-                                <div className="shrink-0">
-                                    <img className="size-10 sm:h-14 sm:w-14 rounded-full" src="https://images.unsplash.com/photo-1669837401587-f9a4cfe3126e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Blog Image"/>
-                                </div>
-
-                                <div className="ms-3 sm:ms-4">
-                                    <p className="sm:mb-1 font-semibold text-gray-800">
+                                <div className="">
+                                    <p className="sm:mb-1 font-body font-semibold text-gray-800">
                                         Louise Donadieu
                                     </p>
-                                    <p className="text-xs text-gray-500">
-                                        Strategic Marketing Consultant
-                                    </p>
+                                    
                                 </div>
                             </div>
                             {/* <!-- End Avatar --> */}
 
                             <div className="mt-5">
-                                <a className="inline-flex items-center gap-x-1.5 text-secondary decoration-2 hover:underline focus:outline-none focus:underline font-medium" href="#">
+                                <a className="inline-flex items-center gap-x-1.5 text-secondary decoration-2 hover:underline focus:outline-none focus:underline font-medium font-body" href="#">
                                     Read more
                                     <svg className="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
                                 </a>
