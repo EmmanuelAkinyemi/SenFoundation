@@ -11,7 +11,8 @@ class ContactUsController extends Controller
     {
         // Validate form input
         $validated = $request->validate([
-            'name' => 'required|string|max:255',
+            'firstname' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'message' => 'required|string|max:1000',
         ]);
