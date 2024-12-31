@@ -39,9 +39,8 @@ const NavBar = () => {
 
     return (
         <header
-            className={`sticky top-0 inset-x-0 z-50 transition-all duration-300 ${
-                isScrolled ? 'bg-white/80 shadow-lg backdrop-blur-md' : 'bg-white/50 backdrop-blur'
-            }`}
+            className={`sticky top-0 inset-x-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 shadow-lg backdrop-blur-md' : 'bg-white/50 backdrop-blur'
+                }`}
         >
             <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 md:py-4">
                 {/* Logo */}
@@ -77,12 +76,12 @@ const NavBar = () => {
                     id="navbar-menu"
                     className="hidden md:flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6"
                 >
-                    <a
+                    {/* <a
                         href="/"
                         className={`text-sm font-medium ${isActive('home') ? 'text-red-600 scale-105' : 'text-gray-800 hover:text-red-600'} transition`}
                     >
                         Home
-                    </a>
+                    </a> */}
                     <a
                         href="#about"
                         className={`text-sm font-medium ${isActive('about') ? 'text-red-600 scale-105' : 'text-gray-800 hover:text-red-600'} transition`}
@@ -95,20 +94,20 @@ const NavBar = () => {
                     >
                         Services
                     </a>
-                    
-                    <Link
-                        href="#blog"
-                        className={`text-sm font-medium ${isActive('blog') ? 'text-red-600 scale-105' : 'text-gray-800 hover:text-red-600'} transition`}
-                    >
-                        Blog
-                    </Link>
-
                     <a
                         href="#contact"
                         className={`text-sm font-medium ${isActive('contact') ? 'text-red-600 scale-105' : 'text-gray-800 hover:text-red-600'} transition`}
                     >
                         Contact Us
                     </a>
+                    <Link
+                        href="/blog"
+                        className={`text-sm font-medium ${isActive('blog') ? 'text-red-600 scale-105' : 'text-gray-800 hover:text-red-600'} transition`}
+                    >
+                        Blog
+                    </Link>
+
+
                 </div>
 
                 {/* Donate Button */}

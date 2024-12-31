@@ -20,7 +20,7 @@ export default function Index({ blogs }) {
             <NavBar />
             <main className='min-h-screen bg-slate-50/50'>
                 {/* <!-- Hero --> */}
-                <section id="home">
+                <section>
                     <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10">
                         {/* <!-- Grid --> */}
                         <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
@@ -271,56 +271,7 @@ export default function Index({ blogs }) {
                 </section>
                 {/* <!-- End Icon Blocks --> */}
 
-                {/* <!-- Card Blog --> */}
-                <section id="blog">
-                    <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-                        {/* <!-- Title --> */}
-                        <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-                            <h2 className="text-2xl font-bold md:text-4xl md:leading-tight font-heading">Insights & Inspirations</h2>
-                            <p className="mt-1 text-gray-600 font-body">Stay informed with the latest stories, updates, and thought-provoking articles on education, empowerment, and innovation from the Seniom Foundation.</p>
-                        </div>
-                        {/* <!-- End Title --> */}
 
-                        {/* <!-- Grid --> */}
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {/* <!-- Card --> */}
-                            {blogs.map((blog) => (
-                                <a key={blog.id} className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5" href={`/blog/${blog.id}`}>
-                                    <div className="aspect-w-16 aspect-h-11">
-                                        <img className="h-48 w-auto  object-cover rounded-xl" src={`/storage/${blog.image}`} alt={blog.title} />
-                                    </div>
-                                    <div className="my-6">
-                                        <h3 className="text-xl font-semibold text-gray-800 font-heading">
-                                            {blog.title}
-                                        </h3>
-                                        <p className="mt-5 text-gray-500 font-body overflow-hidden line-clamp-3">
-                                            {blog.content}
-                                        </p>
-                                    </div>
-                                    <div className="mt-auto flex items-center gap-x-3">
-                                        <div>
-                                            <h5 className="text-sm text-gray-800">By {blog.user.name}</h5>
-                                        </div>
-                                    </div>
-                                </a>
-                            ))}
-                            {/* <!-- End Card --> */}
-
-
-                        </div>
-                        {/* <!-- End Grid --> */}
-
-                        {/* <!-- Card --> */}
-                        <div class="mt-12 text-center">
-                            <a class="py-3 px-4 inline-flex items-center gap-x-1 text-sm font-medium rounded-lg border border-gray-200 bg-white text-secondary shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" href="/blog">
-                                Read more
-                                <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
-                            </a>
-                        </div>
-                        {/* <!-- End Card --> */}
-                    </div>
-                </section>
-                {/* <!-- End Card Blog --> */}
 
                 {/* CTA SECTION */}
                 <div className="bg-white">
@@ -560,6 +511,57 @@ export default function Index({ blogs }) {
                     </div>
                 </section>
                 {/* contact us end */}
+
+                {/* <!-- Card Blog --> */}
+                <section id="blog">
+                    <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+                        {/* <!-- Title --> */}
+                        <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+                            <h2 className="text-2xl font-bold md:text-4xl md:leading-tight font-heading">Insights & Inspirations</h2>
+                            <p className="mt-1 text-gray-600 font-body">Stay informed with the latest stories, updates, and thought-provoking articles on education, empowerment, and innovation from the Seniom Foundation.</p>
+                        </div>
+                        {/* <!-- End Title --> */}
+
+                        {/* <!-- Grid --> */}
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {/* <!-- Card --> */}
+                            {blogs.map((blog) => (
+                                <a key={blog.id} className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5" href={`/blog/${blog.slug}`}>
+                                    <div className="aspect-w-16 aspect-h-11">
+                                        <img className="h-48 w-auto  object-cover rounded-xl" src={`/storage/${blog.image}`} alt={blog.title} />
+                                    </div>
+                                    <div className="my-6">
+                                        <h3 className="text-xl font-semibold text-gray-800 font-heading">
+                                            {blog.title}
+                                        </h3>
+                                        <p className="mt-5 text-gray-500 font-body overflow-hidden line-clamp-3">
+                                            {blog.content}
+                                        </p>
+                                    </div>
+                                    <div className="mt-auto flex items-center gap-x-3">
+                                        <div>
+                                            <h5 className="text-sm text-gray-800">By {blog.user_id.name}</h5>
+                                        </div>
+                                    </div>
+                                </a>
+                            ))}
+                            {/* <!-- End Card --> */}
+
+
+                        </div>
+                        {/* <!-- End Grid --> */}
+
+                        {/* <!-- Card --> */}
+                        <div class="mt-12 text-center">
+                            <a class="py-3 px-4 inline-flex items-center gap-x-1 text-sm font-medium rounded-lg border border-gray-200 bg-white text-secondary shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none" href="/blog">
+                                Read more
+                                <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+                            </a>
+                        </div>
+                        {/* <!-- End Card --> */}
+                    </div>
+                </section>
+                {/* <!-- End Card Blog --> */}
             </main>
             <Footer />
         </>

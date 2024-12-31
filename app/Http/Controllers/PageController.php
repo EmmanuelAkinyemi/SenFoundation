@@ -40,21 +40,16 @@ class PageController extends Controller
         ]);
     }
 
-    public function show(Blog $blog)
-{
-    return Inertia::render('Blog/Show', [
-        'blog' => $blog->load('user', 'category')
-    ]);
-}
-
-    public function latest()
+    // Show a single blog post based on the slug
+    public function show($slug)
     {
-        $latestBlog = Blog::with('user')
-            ->latest()
-            ->first();
+        // Find the blog post by slug, or return a 404 if not found
+        $blogPost = Blog::where('slug', $slug)->firstOrFail();
 
-        return Inertia::render('Blog/latest', [
-            'blog' => $latestBlog
+        // Return the Inertia view with the blog post and its category
+        return Inertia::render('Blog/show', [
+            'blogPost' => $blogPost,
+            'category' => $blogPost->category, // Also passing the category to the frontend
         ]);
     }
 
