@@ -34,21 +34,14 @@ const Create = ({ blog }) => {
                                             </p>
                                             <p class="text-xs sm:text-sm text-gray-800 "><strong>Published On:</strong> {new Date(blog.created_at).toLocaleDateString()}</p>
                                         </div>
-                                        <figure>
-                                            {blog.image && (
-                                                <img class="h-60 w-80 mx-auto object-cover rounded-xl bg-slate-200" src={`/storage/${blog.image}`}
-                                                    alt={blog.title} />
-                                            )}
-                                            <figcaption class="mt-3 text-sm text-center text-gray-500">
-                                                {blog.title}
-                                            </figcaption>
-
-                                        </figure>
+                                        <div className="aspect-w-16 aspect-h-11 bg-slate-100 p-4 rounded">
+                                            <img className="h-100 w-auto  object-cover rounded-xl mx-auto shadow-lg" src={`/storage/${blog.image}`} alt={blog.title} />
+                                        </div>
                                         <p class="text-lg text-gray-800 font-body leading-8">{blog.content}</p>
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                     {/* <!-- End Content --> */}

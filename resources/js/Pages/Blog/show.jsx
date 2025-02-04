@@ -14,7 +14,7 @@ const Show = () => {
             <Head title={blogPost.title} />
             <NavBar />
             <main className="min-h-screen bg-slate-50/50">
-                <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 mt-10 py-24 ">
+                <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-24 ">
                     <div className="grid lg:grid-cols-3 gap-y-8 lg:gap-y-0 lg:gap-x-6">
                         {/* Main Content */}
                         <div className="lg:col-span-2">
@@ -64,12 +64,15 @@ const Show = () => {
 
                         {/* Sidebar */}
                         <div className="lg:col-span-1">
-                            <div className="sticky top-4 space-y-4">
+                            <div className="sticky top-20 space-y-4">
                                 {/* Author info, related posts, or other sidebar content can go here */}
                                 <div className="bg-white p-6 rounded-xl shadow-sm">
                                     <h3 className="text-lg font-semibold mb-4">About the Author</h3>
                                     <p className="text-gray-600">
-                                        {blogPost.user_id?.name || 'Anonymous'}
+                                        {blogPost.user?.name || 'Anonymous'}
+                                    </p>
+                                    <p className="text-gray-600">
+                                    {blogPost.user?.email || 'Not Available'}
                                     </p>
                                 </div>
                             </div>

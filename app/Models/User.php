@@ -32,6 +32,7 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+    protected $visible = ['email'];
 
     /**
      * Get the attributes that should be cast.

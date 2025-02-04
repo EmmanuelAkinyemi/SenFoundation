@@ -3,6 +3,7 @@ import BreadCrumbs from '@/Components/BreadCrumbs';
 import SideNav from '@/Components/SideNav';
 import React from 'react';
 
+
 const Dashboard = () => {
     const { stats } = usePage().props;
     return (

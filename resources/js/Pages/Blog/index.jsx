@@ -68,8 +68,8 @@ const Blog = ({ blogs }) => {
                         {/* <!-- Card --> */}
                         {blogs.map((blog) => (
                             <a key={blog.id} className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5" href={`/blog/${blog.slug}`}>
-                                <div className="aspect-w-16 aspect-h-11">
-                                    <img className="h-48 w-auto  object-cover rounded-xl" src={`/storage/${blog.image}`} alt={blog.title} />
+                                <div className="aspect-w-16 aspect-h-11 mx-auto">
+                                    <img className="h-80 w-100  object-cover rounded-xl" src={`/storage/${blog.image}`} alt={blog.title} />
                                 </div>
                                 <div className="my-6">
                                     <h3 className="text-xl font-semibold text-gray-800 font-heading">

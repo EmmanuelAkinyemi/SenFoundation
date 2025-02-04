@@ -89,7 +89,7 @@ const Index = ({ blogs }) => {
                                                         {blogs.map((blog) => (
                                                             <tr key={blog.id} className="bg-white hover:bg-gray-50">
                                                                 <td className="size-px whitespace-nowrap">
-                                                                    <a className="block relative z-10" href={`/blogs/${blog.slug}`}>
+                                                                    <a className="block relative z-10" href={`/dashboard/blog/${blog.id}/`}>
                                                                         <div className="px-6 py-2">
                                                                             <div className="block text-sm text-blue-600 decoration-2 hover:underline">#{blog.slug}</div>
                                                                         </div>

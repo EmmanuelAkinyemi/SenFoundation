@@ -10,12 +10,16 @@ class PageController extends Controller
 {
     public function home()
     {
+        $blogs = Blog::with(['user:id,name', 'category:id,name']) // Load user and category
+            ->latest()
+            ->take(3) // Get 3 latest blogs
+            ->get();
 
-        $blogs = Blog::latest()->take(3)->with('category')->get(); // Display 6 latest blogs
         return Inertia::render('Home/index', [
-            'blogs' => $blogs->load('user'),
+            'blogs' => $blogs, // No need to load('user') again
         ]);
     }
+
 
     public function about()
     {
@@ -43,15 +47,16 @@ class PageController extends Controller
     // Show a single blog post based on the slug
     public function show($slug)
     {
-        // Find the blog post by slug, or return a 404 if not found
-        $blogPost = Blog::where('slug', $slug)->firstOrFail();
+        // Find the blog post by slug, eager loading 'user' and 'category'
+        $blogPost = Blog::with(['user:id,name,email', 'category:id,name'])->where('slug', $slug)->firstOrFail();
 
-        // Return the Inertia view with the blog post and its category
+        // Return the Inertia view with the blog post, user, and category
         return Inertia::render('Blog/show', [
             'blogPost' => $blogPost,
-            'category' => $blogPost->category, // Also passing the category to the frontend
+            'category' => $blogPost->category,
         ]);
     }
+
 
     public function contact()
     {

@@ -439,9 +439,6 @@ export default function Index({ blogs }) {
                                 </div>
                             </div>
                             {/* <!-- End Col --> */}
-
-
-
                         </div>
                         {/* <!-- End Grid --> */}
                     </div>
@@ -559,7 +556,7 @@ export default function Index({ blogs }) {
                             {blogs.map((blog) => (
                                 <a key={blog.id} className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition duration-300 rounded-xl p-5" href={`/blog/${blog.slug}`}>
                                     <div className="aspect-w-16 aspect-h-11">
-                                        <img className="h-48 w-auto  object-cover rounded-xl" src={`/storage/${blog.image}`} alt={blog.title} />
+                                        <img className="h-80 w-100 mx-auto  object-cover rounded-xl" src={`/storage/${blog.image}`} alt={blog.title} />
                                     </div>
                                     <div className="my-6">
                                         <h3 className="text-xl font-semibold text-gray-800 font-heading">
@@ -571,7 +568,7 @@ export default function Index({ blogs }) {
                                     </div>
                                     <div className="mt-auto flex items-center gap-x-3">
                                         <div>
-                                            <h5 className="text-sm text-gray-800">By {blog.user_id.name}</h5>
+                                            <h5 className="text-sm text-gray-800">By {blog.user ? blog.user.name : 'Anonymous'}</h5>
                                         </div>
                                     </div>
                                 </a>
