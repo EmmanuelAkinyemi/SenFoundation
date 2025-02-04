@@ -18,7 +18,7 @@ class ContactUsController extends Controller
         ]);
 
         // Send email
-        Mail::to('your-email@example.com')->send(new ContactUsMail($validated));
+        Mail::to('emmanuelakinyemi772@gmail.com')->send(new ContactUsMail($validated));
 
         // Optionally, store the message in a database or log
         // ContactUs::create($validated);
